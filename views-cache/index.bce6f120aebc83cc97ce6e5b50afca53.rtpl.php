@@ -151,7 +151,7 @@
               *Para documentos comuns a todos os setores*</p>
               
               <!-- Basic dropdown -->
-              <div class="btn-group dropright">
+              <div class="btn-group">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clique para obter credencial</button>
 
                 <div class="dropdown-menu">
@@ -219,7 +219,7 @@
               <!--Grid column-->
             <div class="col-md-6 mb-4">
   
-              <img src="/res/site/img/meta-5.jpg" class="img-fluid z-depth-1-half" alt="">
+              <img src="/res/site/img/meta-4.jpg" class="img-fluid z-depth-1-half" alt="">
     
             </div>
               <!--Grid column-->
@@ -255,73 +255,26 @@
                       <!--Table head-->
                       <thead>
                           <tr>
-                              <th>#</th>
-                              <th>Name</th>
-                              <th>Surname</th>
-                              <th>Country</th>
-                              <th>City</th>
-                              <th>Position</th>
-                              <th>Age</th>
+                              <th>Setor</th>
+                              <th>Ramal</th>
+                              <th>Colaborador</th>
                           </tr>
                       </thead>
                       <!--Table head-->
           
                       <!--Table body-->
                       <tbody>
+                        <?php $counter1=-1;  if( isset($ramal) && ( is_array($ramal) || $ramal instanceof Traversable ) && sizeof($ramal) ) foreach( $ramal as $key1 => $value1 ){ $counter1++; ?>
+
                           <tr>
-                              <th scope="row">4</th>
-                              <td>Jerry</td>
-                              <td>Horwitz</td>
-                              <td>Italy</td>
-                              <td>Bari</td>
-                              <td>Editor-in-chief</td>
-                              <td>41</td>
+                              <th><?php echo htmlspecialchars( $value1["setor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
+                              <td><?php echo htmlspecialchars( $value1["ramal"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                              <td><?php echo htmlspecialchars( $value1["colaborador"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                           </tr>
-                          <tr>
-                              <th scope="row">5</th>
-                              <td>Janis</td>
-                              <td>Joplin</td>
-                              <td>Poland</td>
-                              <td>Warsaw</td>
-                              <td>Video Maker</td>
-                              <td>39</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">6</th>
-                              <td>Gary</td>
-                              <td>Winogrand</td>
-                              <td>Germany</td>
-                              <td>Berlin</td>
-                              <td>Photographer</td>
-                              <td>37</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">7</th>
-                              <td>Angie</td>
-                              <td>Smith</td>
-                              <td>USA</td>
-                              <td>San Francisco</td>
-                              <td>Teacher</td>
-                              <td>52</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">8</th>
-                              <td>John</td>
-                              <td>Mattis</td>
-                              <td>France</td>
-                              <td>Paris</td>
-                              <td>Actor</td>
-                              <td>28</td>
-                          </tr>
-                          <tr>
-                              <th scope="row">9</th>
-                              <td>Otto</td>
-                              <td>Morris</td>
-                              <td>Germany</td>
-                              <td>Munich</td>
-                              <td>Singer</td>
-                              <td>35</td>
-                          </tr>
+
+                        <?php } ?>
+
+                          
                       </tbody>
                       <!--Table body-->
           
@@ -419,8 +372,27 @@
     new WOW().init();
 
     $(document).ready( function () {
-      $('#tabelaRamais').DataTable();
-    } );
+      $('#tabelaRamais').DataTable({
+
+        "language": {
+                    "lengthMenu": "",
+                    "zeroRecords": "Ramal ou Setor não encontrado",
+                    "info": "Exibindo página _PAGE_ de _PAGES_",
+                    "infoEmpty": "-",
+                    "infoFiltered": "",
+                    "search": "Pesquisar",
+                    "paginate": {
+                        "next": "Próximo",
+                        "previous": "Anterior",
+                        "first": "Primeiro",
+                        "last": "Último"
+                    }
+
+                 }
+
+      });
+       
+    });
 
   </script>
 </body>

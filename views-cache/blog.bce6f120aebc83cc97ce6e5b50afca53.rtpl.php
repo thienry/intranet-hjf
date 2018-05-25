@@ -102,9 +102,10 @@
                     <!--Grid column-->
                     <div class="col-lg-5 col-xl-4 mb-4">
                         <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="/res/site/img/meta-5.jpg" class="img-fluid img-thumbnail" alt="" >
+                        <div class="z-depth-1">
+                            
                             <a href="/post">
+                                <img src="/res/site/img/slide-4.jpg" class="img-fluid" alt="" >
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>

@@ -4,10 +4,11 @@ namespace Thiago\DB;
 
 class Sql {
 
-	const HOSTNAME = "127.0.0.1";
+	const HOSTNAME = "192.168.0.8";
 	const USERNAME = "root";
-	const PASSWORD = "";
-	const DBNAME = "db_intranet";
+	const PASSWORD = "cpdhjfsup917382";
+	const DBNAME = "intranet";
+	const CHARSET = "utf8";
 
 	private $conn;
 
@@ -15,9 +16,9 @@ class Sql {
 	{
 
 		$this->conn = new \PDO(
-			"mysql:dbname=".Sql::DBNAME.";host=".Sql::HOSTNAME, 
+			"mysql:dbname=".Sql::DBNAME.";host=".Sql::HOSTNAME.";charset=".Sql::CHARSET, 
 			Sql::USERNAME,
-			Sql::PASSWORD
+			Sql::PASSWORD			
 		);
 
 	}
