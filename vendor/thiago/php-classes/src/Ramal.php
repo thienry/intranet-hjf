@@ -12,7 +12,7 @@ class Ramal extends Model {
 
         $sql = new Sql();
 
-        return $sql->select("SELECT * FROM listaramais ORDER BY setor");
+        return $sql->select("SELECT * FROM tb_ramais ORDER BY setor");
 
     }
 

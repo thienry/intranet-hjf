@@ -4,10 +4,10 @@ namespace Thiago\DB;
 
 class Sql {
 
-	const HOSTNAME = "192.168.0.8";
+	const HOSTNAME = "localhost";
 	const USERNAME = "root";
-	const PASSWORD = "cpdhjfsup917382";
-	const DBNAME = "intranet";
+	const PASSWORD = "";
+	const DBNAME = "db_intranet";
 	const CHARSET = "utf8";
 
 	private $conn;
