@@ -28,6 +28,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="/res/admin/dist/js/demo.js"></script>
 
+<script src="/res/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
 
 <script type="text/javascript">
   $(document).ready(function () {
@@ -47,6 +49,11 @@
 
                  }
     });
+
+    $('.textarea').wysihtml5({
+      toolbar: { fa: true }
+    });
+
   });
 </script>
 

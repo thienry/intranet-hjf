@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="/res/admin/plugins/iCheck/square/blue.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <script src="/res/admin/dist/js/validaLogin.js"></script>
 </head>
 <body class="hold-transition login-page" style="background-color: #8d1d2e;">
 <div class="login-box">
@@ -33,17 +35,23 @@
 
       <form action="/admin/login" method="post">
         <div class="form-group has-feedback">
-          <input type="text" id="login" name="login" class="form-control" placeholder="Usuario">
+          <input type="text" id="login" name="login" class="form-control" placeholder="Usuario" required>
           <span class="fa fa-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha">
+          <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
           <span class="fa fa-lock form-control-feedback"></span>
         </div>
+        <?php if( $erro == 1 ){ ?>
+
+        <p style="color: #8d1d2e">Usuario incorreto ou senha errada.</p>
+        <?php } ?>
+
         <div class="row">
+          
           <!-- /.col -->
           <div class="col">
-            <button type="submit" class="btn btn-primary btn-block pull-right">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-block pull-right" id="btn-login">Entrar</button>
           </div>
           <!-- /.col -->
         </div>
@@ -68,6 +76,9 @@
 <script src="/res/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- iCheck -->
 <script src="/res/admin/plugins/iCheck/icheck.min.js"></script>
+
+
+
 <script>
   $(function () {
     $('input').iCheck({

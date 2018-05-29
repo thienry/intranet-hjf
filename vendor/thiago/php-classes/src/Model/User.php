@@ -21,7 +21,8 @@ class User extends Model {
 
         if (count($results) === 0) {
 
-            throw new \Exception("Usuario inexistente ou senha invalida.");
+            header("Location: /admin/login?erro=1");
+            exit;
             
         }
 
@@ -39,8 +40,8 @@ class User extends Model {
 
         } else {
 
-            throw new \Exception("Usuario inexistente ou senha invalida.");
-            
+            header("Location: /admin/login?erro=1");
+            exit;            
 
         }
 

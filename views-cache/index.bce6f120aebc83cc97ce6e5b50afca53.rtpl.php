@@ -18,6 +18,9 @@
     <!-- DataTables -->
   <link rel="stylesheet" href="/res/admin/plugins/datatables/dataTables.bootstrap4.min.css">
 
+  <!-- Link do favicon -->
+  <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
+
     <style type="text/css">
       @media (min-width: 800px) and (max-width: 850px) {
               .navbar:not(.top-nav-collapse) {

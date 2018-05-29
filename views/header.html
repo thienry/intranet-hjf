@@ -23,6 +23,10 @@
               }
           }
     </style>
+
+    <!-- Link do favicon -->
+  <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body id="top">

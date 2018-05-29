@@ -17,6 +17,13 @@
 
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <!-- Link do favicon -->
+  <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="/res/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -51,61 +58,3 @@
 
   </nav>
   <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="/admin" class="brand-link" style="text-align: center; color: aliceblue;">
-      <span class="brand-text font-weight-light">Blog HJF</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="/res/admin/dist/img/user.svg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info" >
-          <a href="#" class="d-block"  style="color: aliceblue;">Thiago Moura</a>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="/admin" class="nav-link active" style="color: aliceblue;">
-              <i class="nav-icon fa fa-dashboard"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <!-- if da condicao inadmin-->
-        
-          <li class="nav-item">
-            <a href="/admin/users" class="nav-link"  style="color: aliceblue;">
-              <i class="nav-icon fa fa-users"></i>
-              <p>Usuarios</p>
-            </a>
-          </li>
-          <!-- if da condicao inadmin-->
-          <li class="nav-item">
-            <a href="/admin/posts" class="nav-link"  style="color: aliceblue;">
-              <i class="nav-icon fa fa-rss-square"></i>
-              <p>Postagens</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/admin/ramais" class="nav-link"  style="color: aliceblue;">
-              <i class="nav-icon fa fa-phone"></i>
-              <p>Ramais</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
