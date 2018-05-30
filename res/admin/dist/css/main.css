@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=opensans:500);
 body{
-                background: #33cc99;
+                background: #8d1d2e;
                 color:#fff;
                 font-family: 'Open Sans', sans-serif;
                 max-height:700px;
@@ -58,7 +58,7 @@ body{
                 z-index: 5;
                 font-size: 25px;
                 margin:0 auto;
-                color:#33cc99;
+                color:#8d1d2e;
                 text-decoration: none;
                 margin-right: 10px
             }

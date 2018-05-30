@@ -22,7 +22,7 @@
     </div>
     <div class='c'>
         <div class='_404'>404</div>
-        <hr>
+        <br>
         <div class='_1'>A PAGINA</div>
         <div class='_2'>NAO FOI ENCONTRADA</div>
         <a class='btn' href='/'>VOLTE PARA A INTRANET</a>
