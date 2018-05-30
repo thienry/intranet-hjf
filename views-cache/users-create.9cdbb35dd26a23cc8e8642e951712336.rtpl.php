@@ -14,7 +14,7 @@
           <img src="/res/admin/dist/img/user.svg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info" >
-          <a href="#" class="d-block"  style="color: aliceblue;">Thiago Moura</a>
+          <a href="#" class="d-block"  style="color: aliceblue;"><?php echo getUserName(); ?></a>
         </div>
       </div>
 
@@ -30,13 +30,14 @@
             </a>
           </li>
           <!-- if da condicao inadmin-->
-        
+          <?php if( $user["inadmin"] == 1 ){ ?>
           <li class="nav-item">
             <a href="/admin/users" class="nav-link active"  style="color: aliceblue;">
               <i class="nav-icon fa fa-users"></i>
               <p>Usuarios</p>
             </a>
           </li>
+          <?php } ?>
           <!-- if da condicao inadmin-->
           <li class="nav-item">
             <a href="/admin/posts" class="nav-link"  style="color: aliceblue;">

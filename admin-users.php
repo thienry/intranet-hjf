@@ -8,12 +8,17 @@ $app->get('/admin/users', function() {
 
 	User::verifyLogin();
 
+	$user = new User();
+
+	$user = User::getFromSession();
+
 	$users = User::listAll();
 
 	$page = new PageAdmin();
 
 	$page->setTpl("users", array(
-		"users"=>$users
+		"users"=>$users,
+		"user"=>$user->getValues()
 	));
 
 });
@@ -22,9 +27,15 @@ $app->get('/admin/users/create', function() {
 
 	User::verifyLogin();
 
+	$user = new User();
+
+	$user = User::getFromSession();
+
 	$page = new PageAdmin();
 
-	$page->setTpl("users-create");
+	$page->setTpl("users-create", [
+		"user"=>$user->getValues()
+	]);
 
 });
 
@@ -33,6 +44,8 @@ $app->get("/admin/users/:id_user/password", function($iduser) {
 	User::verifyLogin();
 	
 	$user = new User();
+
+	$user = User::getFromSession();
 	
 	$user->get((int)$iduser);
 	
@@ -110,6 +123,8 @@ $app->get('/admin/users/:id_user', function($iduser) {
 	User::verifyLogin();
 
 	$user = new User();
+
+	$user = User::getFromSession();
 
 	$user->get((int)$iduser);
 

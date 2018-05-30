@@ -6,14 +6,19 @@ use \Thiago\Model\User;
 
 $app->get("/admin/ramais", function() {
 
-    User::verifyLogin();
+	User::verifyLogin();
+	
+	$user = new User();
+
+	$user = User::getFromSession();
 
     $ramais = Ramal::listAll();
 
     $page = new PageAdmin();
 
 	$page->setTpl("ramais", array(
-		"ramais"=>$ramais
+		"ramais"=>$ramais,
+		"user"=>$user->getValues()
 	));
 
 });
@@ -22,9 +27,17 @@ $app->get('/admin/ramais/create', function() {
 
 	User::verifyLogin();
 
+	$user = new User();
+
+	$user = User::getFromSession();
+
 	$page = new PageAdmin();
 
-	$page->setTpl("ramais-create");
+	$page->setTpl("ramais-create", [
+
+		"user"=>$user->getValues()
+	
+	]);
 
 });
 
@@ -62,6 +75,10 @@ $app->get('/admin/ramais/:id_agenda', function($idagenda) {
 
 	User::verifyLogin();
 
+	$user = new User();
+
+	$user = User::getFromSession();
+
 	$ramal = new Ramal();
 
 	$ramal->get((int)$idagenda);
@@ -69,7 +86,8 @@ $app->get('/admin/ramais/:id_agenda', function($idagenda) {
 	$page = new PageAdmin();
 
 	$page->setTpl("ramais-update", array(
-		"ramal"=>$ramal->getValues()
+		"ramal"=>$ramal->getValues(),
+		"user"=>$user->getValues()
 	));
 
 });

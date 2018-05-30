@@ -9,12 +9,17 @@ $app->get("/admin/posts", function() {
 
     User::verifyLogin();
 
+    $user = new User();
+
+	$user = User::getFromSession();
+
     $posts = Post::listAll();
 
     $page = new PageAdmin();
 
     $page->setTpl("posts", [
-        "posts"=>$posts
+        "posts"=>$posts,
+        "user"=>$user->getValues()
     ]);
 
 
@@ -22,11 +27,19 @@ $app->get("/admin/posts", function() {
 
 $app->get('/admin/posts/create', function() {
 
-	User::verifyLogin();
+    User::verifyLogin();
+    
+    $user = new User();
+
+	$user = User::getFromSession();
 
 	$page = new PageAdmin();
 
-	$page->setTpl("posts-create");
+	$page->setTpl("posts-create", [
+
+        "user"=>$user->getValues()
+    
+    ]);
 
 });
 

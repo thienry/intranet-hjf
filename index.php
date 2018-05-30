@@ -15,11 +15,24 @@ $app = new Slim();
 
 $app->config('debug', true);
 
+$app->notFound(function () use ($app) {
+
+    $page = new Page([
+		"header"=>false,
+		"footer"=>false
+	]);
+
+    $page->setTpl('erro-404');
+    
+});
+
+
 require_once("site.php");
 require_once("admin.php");
 require_once("admin-users.php");
 require_once("admin-ramais.php");
 require_once("admin-posts.php");
+require_once("functions.php");
 
 $app->run();
 

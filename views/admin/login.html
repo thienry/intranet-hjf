@@ -18,6 +18,9 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+  <!-- Link do favicon -->
+  <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
+
   <script src="/res/admin/dist/js/validaLogin.js"></script>
 </head>
 <body class="hold-transition login-page" style="background-color: #8d1d2e;">

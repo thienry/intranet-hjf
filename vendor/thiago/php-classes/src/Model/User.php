@@ -11,6 +11,21 @@ class User extends Model {
     const ERROR = "UserError";
     const SUCCESS = "UserSucesss";
 
+
+    public static function getFromSession() {
+
+        $user = new User();
+        
+		if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['id_user'] > 0) {
+
+			$user->setData($_SESSION[User::SESSION]);
+        
+        }
+        
+        return $user;
+    
+    }
+
     public static function login($login, $senha) {
 
         $sql = new Sql();
@@ -132,6 +147,17 @@ class User extends Model {
         $sql = new Sql();
 
         $sql->query("CALL sp_users_delete(:id_user)", array(
+            ":id_user"=>$this->getid_user()
+        ));
+
+    }
+
+    public function setPassword($password) {
+
+        $sql = new Sql();
+
+        $sql->select("UPDATE tb_users SET senha = :senha WHERE id_user = :id_user", array(
+            "senha"=>$password,
             ":id_user"=>$this->getid_user()
         ));
 

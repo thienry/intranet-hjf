@@ -10,6 +10,8 @@ $app->get('/admin', function() {
 
 	$user = new User();
 
+	$user = User::getFromSession();
+
 	$page = new PageAdmin();
 
 	$page->setTpl("index", array(
