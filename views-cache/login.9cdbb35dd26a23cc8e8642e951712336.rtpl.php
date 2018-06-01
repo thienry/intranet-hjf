@@ -39,11 +39,11 @@
       <form action="/admin/login" method="post">
         <div class="form-group has-feedback">
           <input type="text" id="login" name="login" class="form-control" placeholder="Usuario" required>
-          <span class="fa fa-user form-control-feedback"></span>
+          
         </div>
         <div class="form-group has-feedback">
           <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
-          <span class="fa fa-lock form-control-feedback"></span>
+          
         </div>
         <?php if( $erro == 1 ){ ?>
 

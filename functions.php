@@ -11,4 +11,12 @@ function getUserName() {
 
 }
 
+function getUserId() {
+
+	$user = User::getFromSession();
+    
+    return $user->getid_user();
+
+}
+
 ?>

@@ -3,7 +3,7 @@
 namespace Thiago\Model;
 
 use \Thiago\DB\Sql;
-use Thiago\Model;
+use \Thiago\Model;
 
 class User extends Model {
 
@@ -129,11 +129,10 @@ class User extends Model {
 
         $sql = new Sql();
 
-        $results = $sql->select("CALL sp_usersupdate_save(:id_user, :desname, :login, :senha, :setor, :inadmin)", array(
+        $results = $sql->select("CALL sp_usersupdate_save(:id_user, :desname, :login, :setor, :inadmin)", array(
             ":id_user"=>$this->getid_user(),
             ":desname"=>$this->getdesname(),
             ":login"=>$this->getlogin(),
-            ":senha"=>User::getPasswordHash($this->getsenha()),
             ":setor"=>$this->getsetor(),
             ":inadmin"=>$this->getinadmin()
         ));

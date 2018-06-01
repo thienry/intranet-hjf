@@ -91,45 +91,36 @@
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form role="form" action="/admin/posts/create" method="post" enctype="multipart/form-data">
+              <form role="form" action="/admin/posts/create" method="post" >
                 <div class="card-body">
                   <div class="form-group">
                     <label for="titulo">titulo</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o nome do titulo">
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o nome do titulo" required>
                   </div>
                   <div class="form-group">
                     <label for="autor">Autor</label>
-                    <input type="text" class="form-control" id="autor" name="autor" placeholder="Digite o nome do autor">
+                    <input type="text" class="form-control" id="autor" name="autor" placeholder="Digite o nome do autor" required>
                   </div>
-                  <div class="form-group card card-outline card-info">
-                    <label for="texto"></label>
-                      <div class="card-header">
-                        <h3 class="card-title">
-                          Blog Jayme da Fonte
-                        </h3>
-                        
-                      </div>
-                      <!-- /.card-header -->
-                      <div class="card-body pad">
-                        <div class="mb-3">
-                          <textarea class="textarea" placeholder="Digite o texto da postagem" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" id="texto" name="texto"></textarea>
-                        </div>
-                      </div>
-                  </div>
-                
-                <!-- /.card-body -->
-                <div class="form-group">
-                  <label for="file">Foto</label>
-                  <input type="file" class="form-control" id="file" name="file" value="">
-                  <div class="box box-widget">
-                    <div class="box-body">
-                      
+                  <hr>
+                  <div class="form-group">
+                    <div class="mb-3">
+                      <textarea class="textarea" placeholder="Digite o texto da postagem" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" id="texto" name="texto" required></textarea>
                     </div>
                   </div>
-                </div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary" >Cadastrar</button>
-                </div>
+                  <!--
+                  <div class="form-group">
+                    <label for="file">Foto</label>
+                    <input type="file" class="form-control" id="file" name="file">
+                  </div>
+                  -->
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="id_user" name="id_user" value="{function='getUserId()'}" required checked>
+                    <label class="form-check-label" for="id_user"> Aceite os termos... </label>
+                  </div>
+                  <br>
+                
+                  <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+               
               </form>
             </div>
             <!-- /.card -->
