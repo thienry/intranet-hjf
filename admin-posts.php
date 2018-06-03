@@ -33,12 +33,13 @@ $app->get('/admin/posts/create', function() {
 
     $user = User::getFromSession();
 
+    $post = new Post();
+
     $page = new PageAdmin();
 
 	$page->setTpl("posts-create", [
-
-        "user"=>$user->getValues()
-    
+        "user"=>$user->getValues(),
+        "post"=>$post->getImageCreate()
     ]);
 
 });
@@ -52,6 +53,8 @@ $app->post('/admin/posts/create', function() {
     $post->setData($_POST);
 
     $post->save();
+
+    $post->setPhoto($_FILES["file"]);
 
     header("Location: /admin/posts");
     exit;
@@ -104,9 +107,11 @@ $app->post('/admin/posts/:idpost', function($idpost) {
 
     $post->setData($_POST);
 
-    $post->update();
+    $post->save();
 
-    $post->setPhoto($_FILES["file"]);
+    if ((int)$_FILES["file"]["size"] > 0) {
+        $post->setPhoto($_FILES["file"]);
+    }
 
     header('Location: /admin/posts');
     exit;

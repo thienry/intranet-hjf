@@ -84,10 +84,10 @@
                 <!--Grid row-->
                 <div class="row">
                     <!--Grid column-->
-                    <div class="col-md-8 mb-4">
+                    <div class="col mb-4">
                         <!--Featured Image-->
                         <div class="card mb-4 wow fadeIn">
-                            <img src="/res/site/img/meta-5.jpg" class="img-fluid" alt="">
+                            <img src="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid" style="height: 400px;" alt="">
                         </div>
                         <!--Card-->
                         <div class="card mb-4 wow fadeIn">
@@ -95,26 +95,20 @@
                             <!--Card content-->
                             <div class="card-body">
 
-                                <h4 class="mb-3 font-weight-bold dark-grey-text"><strong>Meta 5</strong>
-                                     </h4>
-
-
                                 <blockquote class="blockquote">
                                    
-                                    <footer class="blockquote-footer">Atualizado 28/05/18
-                                        <cite title="Source Title"> - Thiago Moura</cite>
+                                    <footer class="blockquote-footer"><strong>Autor:</strong> <cite title="Source Title"> <?php echo htmlspecialchars( $post["autor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></cite>
+                                        
+                                        <br>
+                                        Atualizado em <?php echo formatDate($post["dtpost"]); ?>
+
                                     </footer>
                                 </blockquote>
 
-                                <p class="h5 my-4">Reduzir o risco de infeccao associado ao cuidado. </p>
+                                <h4 class="mb-3 font-weight-bold dark-grey-text"><strong><?php echo htmlspecialchars( $post["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong>
+                                </h4>
 
-                                <p>A infecção relacionada à assistência à saúde (IRAS) é aquela adquirida em função dos procedimentos necessários à monitorização e ao tratamento de pacientes em hospitais, ambulatórios, centros diagnósticos ou mesmo em assistência domiciliar (home care).</p>
-
-                                <p>Mesmo quando se adotam todas as medidas conhecidas para prevenção e controle de IRAS, certos grupos apresentam maior risco de desenvolver uma infecção. Entre esses casos estão os pacientes em extremos de idade, pessoas com diabetes, câncer, em tratamento ou com doenças imunossupressoras, com lesões extensas de pele, submetidas a cirurgias de grande porte ou transplantes, obesas e fumantes.</p>
-
-                                <p>O monitoramento das IRAS permite que os processos assistenciais sejam aprimorados e que o risco dessas infecções possa ser reduzido.</p>
-
-                                <p>Nesse sentido, a higienização das mãos é um procedimento essencial. O nosso processo é baseado nas recomendações da OMS, que considera a necessidade de higienização das mãos, por todos os profissionais de saúde, em cinco momentos diferentes, incluindo antes e depois de qualquer contato com o paciente.</p>
+                                <p><?php echo htmlspecialchars( $post["texto"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
 
                             </div>
 
@@ -122,71 +116,7 @@
                         <!--/.Card-->                            
                     </div>
 
-                    <div class="col-md-4 mb-4">
-
-                        <!--Card-->
-                        <div class="card mb-4 wow fadeIn">
-    
-                        <div class="card-header">Related articles</div>
-    
-                            <!--Card content-->
-                            <div class="card-body">
-    
-                                <ul class="list-unstyled">
-                                    <li class="media">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder7.jpg" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
-                                    <li class="media my-4">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="An image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
-                                    <li class="media my-4">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
-                                    <li class="media my-4">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
-                                    <li class="media my-4">
-                                        <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image">
-                                        <div class="media-body">
-                                            <a href="">
-                                                <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-                                            </a>
-                                            Cras sit amet nibh libero, in gravida nulla (...)
-                                        </div>
-                                    </li>
-                                </ul>
-    
-                            </div>
-    
-                        </div>
-                        <!--/.Card-->
-    
-                    </div>
-                    <!--Grid column-->
+                   
 
 
 
@@ -211,7 +141,7 @@
         <!--Copyright-->
         <div class="footer-copyright py-3">
             © 2018 Copyright:
-            <a href="http://fasortec.com.br/" target="_blank"> Equipe de TI </a>
+            <a href="http://www.fasortec.com.br/" target="_blank"> Equipe de TI </a>
         </div>
         <!--/.Copyright-->
 

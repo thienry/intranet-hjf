@@ -104,8 +104,8 @@
                     <td>{$value.idpost}</td>
                     <td>{$value.titulo}</td>
                     <td>{$value.autor}</td>
-                    <td>{$value.dtpost}</td>
-                    <td>
+                    <td style="width: 100px">{function="formatDate($value.dtpost)"}</td>
+                    <td style="width: 200px">
                         <a href="/admin/posts/{$value.idpost}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                         <a href="/admin/posts/{$value.idpost}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
                     </td>

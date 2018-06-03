@@ -110,21 +110,23 @@
                   
                   <div class="form-group">
                     <label for="file">Foto</label>
-                    <input type="file" class="form-control" id="file" name="file" value="<?php echo htmlspecialchars( $post["autor"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
-                    <div class="box box-widget">
-                        <div class="box-body">
-                            <img class="img-responsive" id="image-preview" src="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                    <input type="file" class="form-control" id="file" name="file" value="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                    <div class="card card-widget">
+                        <div class="card-body">
+                            <img class="img-responsive img-fluid" id="image-preview" src="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                         </div>
                     </div>
                   </div>
                   
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="id_user" name="id_user" value="{function='getUserId()'}" required checked>
-                    <label class="form-check-label" for="id_user"> Aceite os termos... </label>
+                  <!-- checkbox -->
+                  <div class="form-group">
+                    <label for="id_user">
+                      <input type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='<?php echo getUserId(); ?>' required checked>
+                      Aceite os termos...
+                    </label>
                   </div>
-                  <br>
                 
-                  <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                  <button type="submit" class="btn btn-primary btn-lg">Alterar</button>
                
               </form>
             </div>

@@ -96,6 +96,8 @@
             <!--Section: Cards-->
             <section class="pt-5">
 
+                <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
+
                 <!--Grid row-->
                 <div class="row mt-3 wow fadeIn">
 
@@ -104,8 +106,8 @@
                         <!--Featured image-->
                         <div class="z-depth-1">
                             
-                            <a href="/post">
-                                <img src="/res/site/img/meta-5.jpg" class="img-fluid" alt="" >
+                            <a href="/blog/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                                <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>
@@ -115,11 +117,11 @@
                     <!--Grid column-->
                     <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
                         <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Meta 5</strong>
-                            - Reduzir o risco de infeccao associado ao cuidado.
+                                <?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+
                         </h3>
-                        <p class="grey-text">A infecção relacionada à assistência à saúde (IRAS) é aquela adquirida em função dos procedimentos necessários à monitorização e ao...</p>
-                        <a href="https://mdbootstrap.com/automated-app-start/" target="_blank" class="btn btn-primary btn-md">Leia mais
+                        <p class="grey-text"><?php echo cortaStr($value1["texto"]); ?> ...</p>
+                        <a href="/blog/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-md">Leia mais
                             <i class="fa fa-play ml-2"></i>
                         </a>
                     </div>
@@ -130,230 +132,19 @@
 
                 <hr class="mb-5">
 
-                <!--Grid row-->
-                <div class="row wow fadeIn">
+                <?php } ?>
 
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="https://mdbootstrap.com/wp-content/uploads/2018/01/push-fb.jpg" class="img-fluid img-thumbnail" alt="">
-                            <a href="https://mdbootstrap.com/web-push-start/" target="_blank">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--Grid column-->
 
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Web Push notifications</strong>
-                        </h3>
-                        <p class="grey-text">Push messaging provides a simple and effective way to re-engage with your users and in this tutorial
-                            you'll learn how to add push notifications to your web app</p>
-                        <a href="https://mdbootstrap.com/web-push-start/" target="_blank" class="btn btn-primary btn-md">Start tutorial
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <hr class="mb-5">
-
-                <!--Grid row-->
-                <div class="row mt-3 wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid" alt="">
-                            <a href="https://mdbootstrap.com/automated-app-start/" target="_blank">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Bootstrap Automation</strong>
-                        </h3>
-                        <p class="grey-text">Learn how to create a smart website which learns your user and reacts properly to his behavior.</p>
-                        <a href="https://mdbootstrap.com/automated-app-start/" target="_blank" class="btn btn-primary btn-md">Start tutorial
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-                <hr class="mb-5">
-
-                <!--Grid row-->
-                <div class="row mt-3 wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid" alt="">
-                            <a href="https://mdbootstrap.com/automated-app-start/" target="_blank">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Bootstrap Automation</strong>
-                        </h3>
-                        <p class="grey-text">Learn how to create a smart website which learns your user and reacts properly to his behavior.</p>
-                        <a href="https://mdbootstrap.com/automated-app-start/" target="_blank" class="btn btn-primary btn-md">Start tutorial
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-                <hr class="mb-5">
-
-                <!--Grid row-->
-                <div class="row mt-3 wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid" alt="">
-                            <a href="https://mdbootstrap.com/automated-app-start/" target="_blank">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Bootstrap Automation</strong>
-                        </h3>
-                        <p class="grey-text">Learn how to create a smart website which learns your user and reacts properly to his behavior.</p>
-                        <a href="https://mdbootstrap.com/automated-app-start/" target="_blank" class="btn btn-primary btn-md">Start tutorial
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-                <hr class="mb-5">
-
-                <!--Grid row-->
-                <div class="row mt-3 wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid" alt="">
-                            <a href="https://mdbootstrap.com/automated-app-start/" target="_blank">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Bootstrap Automation</strong>
-                        </h3>
-                        <p class="grey-text">Learn how to create a smart website which learns your user and reacts properly to his behavior.</p>
-                        <a href="https://mdbootstrap.com/automated-app-start/" target="_blank" class="btn btn-primary btn-md">Start tutorial
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-                <hr class="mb-5">
-
-                <!--Grid row-->
-                <div class="row mt-3 wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay rounded z-depth-1">
-                            <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid" alt="">
-                            <a href="https://mdbootstrap.com/automated-app-start/" target="_blank">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                            <strong>Bootstrap Automation</strong>
-                        </h3>
-                        <p class="grey-text">Learn how to create a smart website which learns your user and reacts properly to his behavior.</p>
-                        <a href="https://mdbootstrap.com/automated-app-start/" target="_blank" class="btn btn-primary btn-md">Start tutorial
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-                <hr class="mb-5">
 
                 <!--Pagination-->
                 <nav class="d-flex justify-content-center wow fadeIn">
                     <ul class="pagination pg-blue">
+                        <?php $counter1=-1;  if( isset($pages) && ( is_array($pages) || $pages instanceof Traversable ) && sizeof($pages) ) foreach( $pages as $key1 => $value1 ){ $counter1++; ?>
 
-                        <!--Arrow left-->
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
+                        <li class='page-item <?php if( $value1["page"] == 1 ){ ?> active <?php } ?>'>
+                            <a class="page-link" href="<?php echo htmlspecialchars( $value1["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["page"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a>
                         </li>
-
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">5</a>
-                        </li>
-
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
+                        <?php } ?>               
                     </ul>
                 </nav>
                 <!--Pagination-->
@@ -376,7 +167,7 @@
         <!--Copyright-->
         <div class="footer-copyright py-3">
             © 2018 Copyright:
-            <a href="https://fasortec.com.br/" target="_blank"> Equipe de TI </a>
+            <a href="https://www.fasortec.com.br/" target="_blank"> Equipe de TI </a>
         </div>
         <!--/.Copyright-->
 

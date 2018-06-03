@@ -91,7 +91,7 @@
               <!-- /.card-header -->
 
               <!-- form start -->
-              <form role="form" action="/admin/posts/create" method="post" >
+              <form role="form" action="/admin/posts/create" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="titulo">titulo</label>
@@ -107,18 +107,19 @@
                       <textarea class="textarea" placeholder="Digite o texto da postagem" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" id="texto" name="texto" required></textarea>
                     </div>
                   </div>
-                  <!--
                   <div class="form-group">
                     <label for="file">Foto</label>
-                    <input type="file" class="form-control" id="file" name="file">
+                    <input type="file" class="form-control" id="file" name="file" />
+                    <img class="img-responsive img-fluid" id="image-preview"/>
                   </div>
-                  -->
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="id_user" name="id_user" value="{function='getUserId()'}" required checked>
-                    <label class="form-check-label" for="id_user"> Aceite os termos... </label>
+                  <!-- checkbox -->
+                  <div class="form-group">
+                    <label for="id_user">
+                      <input type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='<?php echo getUserId(); ?>' required checked>
+                      Aceite os termos...
+                    </label>
                   </div>
-                  <br>
-                
+                               
                   <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
                
               </form>
@@ -133,3 +134,5 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  

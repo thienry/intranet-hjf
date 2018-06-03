@@ -2,7 +2,7 @@
 
 use \Thiago\PageAdmin;
 use \Thiago\Model\User;
-
+use \Thiago\Model\Post;
 
 $app->get('/admin', function() {
 
@@ -12,10 +12,16 @@ $app->get('/admin', function() {
 
 	$user = User::getFromSession();
 
+	$post = Post::listAllLimit();
+
+	$posts = new Post();
+
 	$page = new PageAdmin();
 
 	$page->setTpl("index", array(
-		"user"=>$user->getValues()
+		"user"=>$user->getValues(),
+		"posts"=>$posts->getValues(),
+		"posts"=>Post::checkList($post)
 	));
 
 });
