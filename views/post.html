@@ -89,6 +89,10 @@
                         <div class="card mb-4 wow fadeIn">
                             <img src="{$post.desphoto}" class="img-fluid" style="height: 400px;" alt="">
                         </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
                         <!--Card-->
                         <div class="card mb-4 wow fadeIn">
 
@@ -107,12 +111,18 @@
                                 <h4 class="mb-3 font-weight-bold dark-grey-text"><strong>{$post.titulo}</strong>
                                 </h4>
 
-                                <p>{$post.texto}</p>
+                                <p style="text-align: justify;">{function="formataStr($post.texto)"}</p>
 
                             </div>
 
                         </div>
-                        <!--/.Card-->                            
+                        <!--/.Card-->    
+
+                    </div>
+                                  
+        
+
+
                     </div>
 
                    

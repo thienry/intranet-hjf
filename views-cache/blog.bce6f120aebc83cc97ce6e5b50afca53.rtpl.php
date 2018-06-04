@@ -102,11 +102,11 @@
                 <div class="row mt-3 wow fadeIn">
 
                     <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
+                    <div class="col-lg-5 col-xl-4 col-md-8 mb-4">
                         <!--Featured image-->
                         <div class="z-depth-1">
                             
-                            <a href="/blog/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                            <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                 <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
@@ -121,7 +121,7 @@
 
                         </h3>
                         <p class="grey-text"><?php echo cortaStr($value1["texto"]); ?> ...</p>
-                        <a href="/blog/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-md">Leia mais
+                        <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-md">Leia mais
                             <i class="fa fa-play ml-2"></i>
                         </a>
                     </div>

@@ -54,7 +54,9 @@ $app->post('/admin/posts/create', function() {
 
     $post->save();
 
-    $post->setPhoto($_FILES["file"]);
+    if ((int)$_FILES["file"]["size"] > 0) {
+        $post->setPhoto($_FILES["file"]);
+    }
 
     header("Location: /admin/posts");
     exit;

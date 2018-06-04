@@ -117,7 +117,7 @@
               <div class="card-body">
                 <h5 class="card-title"><strong><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong></h5>
                 <p class="card-text"><?php echo cortaStr($value1["texto"]); ?> ...</p>
-                <a href="/blog/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary">Ver Postagem</a>
+                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary">Ver Postagem</a>
               </div>
             </div>
           </div>

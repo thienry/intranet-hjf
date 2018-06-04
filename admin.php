@@ -8,6 +8,8 @@ $app->get('/admin', function() {
 
 	User::verifyLogin();
 
+	User::expiraLogin();
+
 	$user = new User();
 
 	$user = User::getFromSession();

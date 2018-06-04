@@ -39,7 +39,7 @@ class User extends Model {
             header("Location: /admin/login?erro=1");
             exit;
             
-        }
+        } 
 
         $data = $results[0];
 
@@ -69,6 +69,48 @@ class User extends Model {
             header("Location: /admin/login");
             exit;
 
+        }             
+
+    }
+
+    public static function expiraLogin() {
+
+        $tempolimite = 10;
+            
+        $_SESSION['registro'] = time();
+
+        $_SESSION['limite'] = $tempolimite;
+
+        if (!$_SESSION[User::SESSION]) {
+
+            header("Location: /admin/login");
+            exit;
+        
+        }
+
+        if ($_SESSION['registro']) {
+        
+            $segundos = time() - $_SESSION['registro'];
+        
+        }
+
+        if ($segundos > $_SESSION['limite']) {
+        
+            unset($_SESSION['registro']);
+        
+            unset($_SESSION['limite']);
+        
+            unset($_SESSION[User::SESSION]);
+        
+            session_destroy();
+        
+            header("Location: /admin/login");
+            exit;
+        
+        } else {
+        
+            $_SESSION['registro'] = time();
+        
         }
 
     }
@@ -204,7 +246,8 @@ class User extends Model {
 
         $_SESSION[User::SUCCESS] = NULL;
         
-	}
+    }
+    
 
 }
 

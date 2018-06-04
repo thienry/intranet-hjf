@@ -37,7 +37,7 @@ class Post extends Model {
             ":idpost"=>$this->getidpost(),
             ":titulo"=>$this->gettitulo(),
             ":autor"=>$this->getautor(),
-            ":texto"=>trim(strip_tags($this->gettexto())),
+            ":texto"=>$this->gettexto(),
             ":id_user"=>$this->getid_user()
         ));
 
@@ -144,12 +144,13 @@ class Post extends Model {
 
     }
 
-    public function getFromURL($titulo)	{
+    public function getFromURL($idpost, $titulo)	{
 
         $sql = new Sql();
         
-		$rows = $sql->select("SELECT * FROM tb_posts WHERE titulo = :titulo", [
-			':titulo'=>$titulo
+		$rows = $sql->select("SELECT * FROM tb_posts WHERE idpost = :idpost AND titulo = :titulo", [
+            ':idpost'=>$idpost,
+            ':titulo'=>$titulo
         ]);
         
         if (count($rows) > 0) {

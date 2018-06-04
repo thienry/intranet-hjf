@@ -101,11 +101,11 @@
                 <div class="row mt-3 wow fadeIn">
 
                     <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 mb-4">
+                    <div class="col-lg-5 col-xl-4 col-md-8 mb-4">
                         <!--Featured image-->
                         <div class="z-depth-1">
                             
-                            <a href="/blog/{$value.titulo}">
+                            <a href="/blog/{$value.idpost}/{$value.titulo}">
                                 <img src="{$value.desphoto}" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
@@ -119,7 +119,7 @@
                                 {$value.titulo}
                         </h3>
                         <p class="grey-text">{function="cortaStr($value.texto)"} ...</p>
-                        <a href="/blog/{$value.titulo}" class="btn btn-primary btn-md">Leia mais
+                        <a href="/blog/{$value.idpost}/{$value.titulo}" class="btn btn-primary btn-md">Leia mais
                             <i class="fa fa-play ml-2"></i>
                         </a>
                     </div>

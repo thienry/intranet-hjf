@@ -19,16 +19,19 @@ $app->get('/', function() {
 
 });
 
-$app->get('/blog/:titulo', function($titulo) {
+$app->get('/blog/:idpost/:titulo', function($idpost, $titulo) {
 
 	$post = new Post();
 
-	$post->getFromURL($titulo);
+	$post->getFromURL($idpost, $titulo);
+
+	$posts = Post::listAllLimit();
 
 	$page = new Page();
 
 	$page->setTpl("post", [
-		"post"=>$post->getValues()		
+		"post"=>$post->getValues(),
+		"posts"=>Post::checkList($post)		
 	]);
 
 });
@@ -58,7 +61,7 @@ $app->get('/blog', function() {
 
 	$page->setTpl("blog", array(
 		"posts"=>Post::checkList($post),
-		'posts'=>$pagination['data'],
+		"posts"=>$pagination['data'],
 		"pages"=>$pages
 	));
 

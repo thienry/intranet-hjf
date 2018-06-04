@@ -32,6 +32,12 @@ function cortaStr($texto) {
 
 }
 
+function formataStr($texto) {
+
+    return substr($texto, 0, 500000);
+
+}
+
 function totalPosts() {
 
     $totals = Post::getPostsTotals();

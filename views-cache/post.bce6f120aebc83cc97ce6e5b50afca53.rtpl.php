@@ -89,6 +89,10 @@
                         <div class="card mb-4 wow fadeIn">
                             <img src="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid" style="height: 400px;" alt="">
                         </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
                         <!--Card-->
                         <div class="card mb-4 wow fadeIn">
 
@@ -108,12 +112,18 @@
                                 <h4 class="mb-3 font-weight-bold dark-grey-text"><strong><?php echo htmlspecialchars( $post["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong>
                                 </h4>
 
-                                <p><?php echo htmlspecialchars( $post["texto"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
+                                <p style="text-align: justify;"><?php echo formataStr($post["texto"]); ?></p>
 
                             </div>
 
                         </div>
-                        <!--/.Card-->                            
+                        <!--/.Card-->    
+
+                    </div>
+                                  
+        
+
+
                     </div>
 
                    
