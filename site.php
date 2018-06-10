@@ -9,11 +9,14 @@ use \Thiago\Model\Post;
 $app->get('/', function() {
 
 	$ramal = Ramal::listAll();
+
+	$posts = Post::listAllLimit2();
 	
 	$page = new Page();
 
 	$page->setTpl("index", array(
-		"ramal"=>$ramal
+		"ramal"=>$ramal,
+		"posts"=>Post::checkList($posts)
 	));
 
 
@@ -25,13 +28,13 @@ $app->get('/blog/:idpost/:titulo', function($idpost, $titulo) {
 
 	$post->getFromURL($idpost, $titulo);
 
-	$posts = Post::listAllLimit();
+	$posts = Post::listAllLimit2();
 
 	$page = new Page();
 
 	$page->setTpl("post", [
 		"post"=>$post->getValues(),
-		"posts"=>Post::checkList($post)		
+		"posts"=>Post::checkList($posts)		
 	]);
 
 });

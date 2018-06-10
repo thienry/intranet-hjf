@@ -192,6 +192,14 @@ class Post extends Model {
 
     }
 
+
+    public static function listAllLimit2() {
+
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_posts ORDER BY idpost DESC LIMIT 3");
+
+    }
 }
 
 ?>

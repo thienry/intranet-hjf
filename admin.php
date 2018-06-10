@@ -8,8 +8,6 @@ $app->get('/admin', function() {
 
 	User::verifyLogin();
 
-	User::expiraLogin();
-
 	$user = new User();
 
 	$user = User::getFromSession();
@@ -58,6 +56,33 @@ $app->get('/admin/logout', function() {
 	header("Location: /admin/login");
 	exit;
 
+});
+
+$app->get("/admin/ausente", function() {
+ 
+	if ($_SESSION[User::SESSION] && (int)$_SESSION[User::SESSION]["id_user"] > 0 &&	(bool)$_SESSION[User::SESSION]["id_user"] === true
+	) {
+	
+		$user = new User();
+	 
+		$user->get((int)$_SESSION[User::SESSION]['id_user']);
+		
+		$_SESSION[User::SESSION]['inausente'] = true;
+		
+		$page = new PageAdmin([
+			"header"=>false,
+			"footer"=>false,
+			'data'=>array(
+				'user'=>$user->getValues()
+		   )
+		]);
+		
+		$page->setTpl("admin-ausente", [
+			'users'=>$user,
+		]);
+	
+	}
+   
 });
 
 ?>

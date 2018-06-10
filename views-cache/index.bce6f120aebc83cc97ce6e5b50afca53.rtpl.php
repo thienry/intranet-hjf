@@ -9,17 +9,18 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="/res/site/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/res/site/css/bootstrap.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="/res/site/css/mdb.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="/res/site/css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
     <!-- DataTables -->
-  <link rel="stylesheet" href="/res/admin/plugins/datatables/dataTables.bootstrap4.min.css">
-
-  <!-- Link do favicon -->
-  <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/res/admin/plugins/datatables/dataTables.bootstrap4.min.css">
+    <!-- Ownl Carousel-->
+    <link rel="stylesheet" href="/res/site/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
+    <!-- Link do favicon -->
+    <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
 
     <style type="text/css">
       @media (min-width: 800px) and (max-width: 850px) {
@@ -61,13 +62,13 @@
               <a class="nav-link js-scroll-trigger" href="#ramais"> Ramais </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">Documentos Institucionais</a>
+              <a class="nav-link" href="//ecm/" target="_blank">Documentos Institucionais</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">Helpdesk</a>
+              <a class="nav-link" href="//helpdesk/" target="_blank">Helpdesk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" target="_blank">Webmail</a>
+              <a class="nav-link" href="//webmail/" target="_blank">Webmail</a>
             </li>
           </ul>
 
@@ -94,14 +95,15 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="/res/site/img/slide-4.jpg" alt="First slide">
+              <div class='carousel-item active zoom' >
+                <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
+
+                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-block w-100" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"></a>
               </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="/res/site/img/slide-5.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="/res/site/img/slide-3.jpg" alt="Third slide">
+              <div class='carousel-item zoom'>
+              <?php } ?>
+
+              <img class="d-block w-100" src="/res/site/img/endoscopia_da_coluna.jpg" alt="">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -127,12 +129,11 @@
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <div class="centralizar">
-              <a href="#" target="_blank"><img src="/res/site/img/svg/open.svg" class="" ></a>
+              <a href="/blog"><img src="/res/site/img/svg/blogger.svg" class="" ></a>
             </div>
             <div class="text-icons">
-              <h3 class="h3 mb-3">E-mails</h3>
-              <p>Já enviou ou vizualizou seus E-mails hoje?<br>
-                Clique aqui para acessar seu endereço de e-mail.</p>
+              <h3 class="h3 mb-3">Blog HJF</h3>
+              <p>Aqui voce fica por dentro de todas as novidades do hospital.</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-12">
@@ -147,7 +148,7 @@
           </div>          
           <div class="col-md-4 col-sm-12">
             <div class="centralizar">
-              <a href="#" target="_blank"><img src="/res/site/img/svg/file.svg" class=""></a>
+              <a href="//ecm" target="_blank"><img src="/res/site/img/svg/file.svg" class=""></a>
             </div>
             <div class="text-icons">
               <h3 class="h3 mb-3">Documentos Institucionais</h3>
@@ -169,6 +170,8 @@
           </div>
         </div>
       </section>
+
+      <hr class="my-5">
 
       <!--Section: Main info-->
       <section class="mt-5 wow fadeIn">
@@ -204,37 +207,24 @@
 
       <section class="mt-5 wow fadeIn">
 
-          <!--Grid row-->
-          <div class="row">
-  
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
+        <div class="class">
 
-              <div class="info-reverse">
-
-                <!-- Main heading -->
-                <h2 class="h2 mb-3">Metas de Segurança do Paciente</h2>
-                <p style="text-align: justify;">Tem o objetivo de garantir as Boas Práticas de Segurança no Serviço de saúde.</p>
-                <!-- Main heading -->
-              </div>
+            <h1 class="h1 mb-3" style="text-align: center">Metas Internacionais de Segurança do Paciente</h1>
+            <p style="text-align: center">O hospital implementa 6 metas para segurança do paciente com o <br> objetivo de oferecer um ambiente cada vez mais seguro aos pacientes, acompanhantes e profissionais de saúde.</p>
               
-            </div>
-            <!--Grid column-->
-
-              <!--Grid column-->
-            <div class="col-md-6 mb-4">
-  
-              <img src="/res/site/img/meta-4.jpg" class="img-fluid z-depth-1-half" alt="">
-    
-            </div>
-              <!--Grid column-->
-  
-            
-  
-          </div>
-          <!--Grid row-->
-  
-        </section>
+        </div>
+        <br>
+        <div class="owl-carousel">
+          
+          <div> <img src="/res/site/img/meta-2.jpg" class="img-fluid px-4" alt="Meta 2"> </div>
+          <div> <img src="/res/site/img/meta-3.jpg" class="img-fluid px-4" alt="Meta 3"> </div>
+          <div> <img src="/res/site/img/meta-4.jpg" class="img-fluid px-4" alt="Meta 4"> </div>
+          <div> <img src="/res/site/img/meta-5.jpg" class="img-fluid px-4" alt="Meta 5"> </div>
+          <div> <img src="/res/site/img/meta-6.jpg" class="img-fluid px-4" alt="Meta 6"> </div>
+          
+        </div>
+        
+      </section>
         <!--Section: Main info-->
 
       <hr class="my-5" id="ramais">
@@ -247,7 +237,7 @@
               <h1 class="h1 mb-3" style="text-align: center">Lista de Ramais</h1>
               <p style="text-align: center">O hospital é muito grande não dá pra decorar todos os ramais <br>
               Digite o setor ou o ramal ou o colaborador e clique em <strong>Pesquisar</strong> e faça uma consulta:</p>
-            </div>
+          </div>
 
         </div>
 
@@ -366,15 +356,16 @@
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="/res/site/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/res/site/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/res/site/js/bootstrap.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="/res/site/js/mdb.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <script type="text/javascript" src="/res/site/js/scrolltotop.js"></script>
-
-    <script src="/res/admin/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-      <!-- Initializations -->
-  <script type="text/javascript">
+    <script type="text/javascript" src="/res/site/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+    <script type="text/javascript" src="/res/admin/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <!-- Initializations -->
+    <script type="text/javascript">
     // Animations initialization
     new WOW().init();
 
@@ -398,10 +389,20 @@
                  }
 
       });
+
+      $(".owl-carousel").owlCarousel({
+
+        items:2,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
+
+      });
        
     });
 
   </script>
 </body>
-
 </html>

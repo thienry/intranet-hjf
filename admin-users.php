@@ -8,6 +8,8 @@ $app->get('/admin/users', function() {
 
 	User::verifyLogin();
 
+	User::verifyInadmin();
+
 	$user = new User();
 
 	$user = User::getFromSession();
@@ -27,6 +29,8 @@ $app->get('/admin/users/create', function() {
 
 	User::verifyLogin();
 
+	User::verifyInadmin();
+
 	$user = new User();
 
 	$user = User::getFromSession();
@@ -42,6 +46,8 @@ $app->get('/admin/users/create', function() {
 $app->get("/admin/users/:id_user/password", function($iduser) {
 
 	User::verifyLogin();
+
+	User::verifyInadmin();
 	
 	$user = new User();
 
@@ -62,6 +68,8 @@ $app->get("/admin/users/:id_user/password", function($iduser) {
 $app->post("/admin/users/:id_user/password", function($iduser) {
 
 	User::verifyLogin();
+
+	User::verifyInadmin();
 
 	if (!isset($_POST['senha']) || $_POST['senha'] === '') {
 
@@ -107,6 +115,8 @@ $app->get("/admin/users/:id_user/delete", function($iduser) {
 
 	User::verifyLogin();
 
+	User::verifyInadmin();
+
 	$user = new User();
 
 	$user->get((int)$iduser);
@@ -121,6 +131,8 @@ $app->get("/admin/users/:id_user/delete", function($iduser) {
 $app->get('/admin/users/:id_user', function($iduser) {
 
 	User::verifyLogin();
+
+	User::verifyInadmin();
 
 	$user = new User();
 
@@ -139,6 +151,8 @@ $app->get('/admin/users/:id_user', function($iduser) {
 $app->post("/admin/users/create", function() {
 
 	User::verifyLogin();
+
+	User::verifyInadmin();
 	
 	$user = new User();
 
@@ -156,6 +170,8 @@ $app->post("/admin/users/create", function() {
 $app->post("/admin/users/:id_user", function($iduser) {
 
 	User::verifyLogin();
+
+	User::verifyInadmin();
 
 	$user = new User();
 

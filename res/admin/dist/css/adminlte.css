@@ -12078,7 +12078,7 @@ label:not(.form-check-label):not(.custom-file-label) {
  */
 /* ADD THIS CLASS TO THE <BODY> TAG */
 .lockscreen {
-  background: #e9ecef;
+  background: #8d1d2e;
 }
 
 .lockscreen-logo {
@@ -12088,9 +12088,6 @@ label:not(.form-check-label):not(.custom-file-label) {
   font-weight: 300;
 }
 
-.lockscreen-logo a {
-  color: #444;
-}
 
 .lockscreen-wrapper {
   max-width: 400px;
@@ -12102,6 +12099,11 @@ label:not(.form-check-label):not(.custom-file-label) {
 .lockscreen .lockscreen-name {
   text-align: center;
   font-weight: 600;
+ 
+}
+
+.lockscreen-name {
+  color: black;
 }
 
 /* Will contain the image and the sign in form */

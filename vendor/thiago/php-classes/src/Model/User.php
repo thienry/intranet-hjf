@@ -51,6 +51,8 @@ class User extends Model {
 
             $_SESSION[User::SESSION] = $user->getValues();
 
+            $_SESSION[User::SESSION]['inausente'] = false;
+
             return $user;
 
         } else {
@@ -64,7 +66,12 @@ class User extends Model {
 
     public static function verifyLogin() {
 
-        if (!isset($_SESSION[User::SESSION]) || !$_SESSION[User::SESSION] || !(int)$_SESSION[User::SESSION]["id_user"] > 0) {
+        if (isset($_SESSION[User::SESSION]['inausente']) && $_SESSION[User::SESSION]['inausente'] === true) {
+            
+            header("Location: /admin/ausente");
+            exit;
+
+        } elseif (!isset($_SESSION[User::SESSION]) || !$_SESSION[User::SESSION] || !(int)$_SESSION[User::SESSION]["id_user"] > 0) {
 
             header("Location: /admin/login");
             exit;
@@ -73,44 +80,13 @@ class User extends Model {
 
     }
 
-    public static function expiraLogin() {
+    public static function verifyInadmin($inadmin = false) {
 
-        $tempolimite = 10;
-            
-        $_SESSION['registro'] = time();
+        if ($inadmin === false && (bool)$_SESSION[User::SESSION]['inadmin'] === false) {
 
-        $_SESSION['limite'] = $tempolimite;
-
-        if (!$_SESSION[User::SESSION]) {
-
-            header("Location: /admin/login");
+            header("Location: /admin");
             exit;
-        
-        }
 
-        if ($_SESSION['registro']) {
-        
-            $segundos = time() - $_SESSION['registro'];
-        
-        }
-
-        if ($segundos > $_SESSION['limite']) {
-        
-            unset($_SESSION['registro']);
-        
-            unset($_SESSION['limite']);
-        
-            unset($_SESSION[User::SESSION]);
-        
-            session_destroy();
-        
-            header("Location: /admin/login");
-            exit;
-        
-        } else {
-        
-            $_SESSION['registro'] = time();
-        
         }
 
     }

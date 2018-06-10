@@ -88,7 +88,6 @@
                     <p class="lead" style="color: aliceblue">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                     <hr class="my-4">
                     <p style="color: aliceblue">It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Blog HJF</a>
                 </div>
             </section>
             <!--Section: Jumbotron-->
@@ -104,7 +103,7 @@
                     <!--Grid column-->
                     <div class="col-lg-5 col-xl-4 col-md-8 mb-4">
                         <!--Featured image-->
-                        <div class="z-depth-1">
+                        <div class="z-depth-1 zoom">
                             
                             <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                 <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
@@ -141,7 +140,7 @@
                     <ul class="pagination pg-blue">
                         <?php $counter1=-1;  if( isset($pages) && ( is_array($pages) || $pages instanceof Traversable ) && sizeof($pages) ) foreach( $pages as $key1 => $value1 ){ $counter1++; ?>
 
-                        <li class='page-item <?php if( $value1["page"] == 1 ){ ?> active <?php } ?>'>
+                        <li class='page-item'>
                             <a class="page-link" href="<?php echo htmlspecialchars( $value1["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["page"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a>
                         </li>
                         <?php } ?>               

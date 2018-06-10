@@ -89,8 +89,9 @@
                         <div class="card mb-4 wow fadeIn">
                             <img src="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid" style="height: 400px;" alt="">
                         </div>
+                    </div>
                 </div>
-                </div>
+
                 <div class="row">
                     <div class="col-md-8">
                         <!--Card-->
@@ -120,22 +121,42 @@
                         <!--/.Card-->    
 
                     </div>
-                                  
-        
+                    <!--/ .Col-->
 
+                    <div class="col-md-4 mb-4">
+                        <div class="card mb-4 wow fadeIn">
+                            <div class="card-header">Ultimas Postagens</div>
+                            <!--Card content-->
+                            <div class="card-body">
+    
+                                    <ul class="list-unstyled">
+                                        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
 
+                                        <li class="media my-4">
+                                                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-flex mr-3" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="height: 30px; width: 70px;"></a>
+                                            <div class="media-body">
+                                                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                                                    <h5 class="mt-0 mb-1 font-weight-bold"><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h5>
+                                                </a>
+                                                <?php echo formataStr($value1["texto"]); ?>
+
+                                            </div>
+                                        </li>
+                                        <?php } ?>
+
+                                    </ul>
+    
+                                </div>
+                        </div>
                     </div>
 
-                   
-
-
-
                 </div>
-
+                <!--/ .Row-->
             </section>
             <!--Section: Post-->
 
         </div>
+        <!--/. Container-->
 
     </main>
     <!--Main layout-->

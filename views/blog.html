@@ -88,7 +88,6 @@
                     <p class="lead" style="color: aliceblue">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                     <hr class="my-4">
                     <p style="color: aliceblue">It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Blog HJF</a>
                 </div>
             </section>
             <!--Section: Jumbotron-->
@@ -103,7 +102,7 @@
                     <!--Grid column-->
                     <div class="col-lg-5 col-xl-4 col-md-8 mb-4">
                         <!--Featured image-->
-                        <div class="z-depth-1">
+                        <div class="z-depth-1 zoom">
                             
                             <a href="/blog/{$value.idpost}/{$value.titulo}">
                                 <img src="{$value.desphoto}" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
@@ -137,7 +136,7 @@
                 <nav class="d-flex justify-content-center wow fadeIn">
                     <ul class="pagination pg-blue">
                         {loop="$pages"}
-                        <li class='page-item {if="$value.page == 1"} active {/if}'>
+                        <li class='page-item'>
                             <a class="page-link" href="{$value.link}">{$value.page}</a>
                         </li>
                         {/loop}               
