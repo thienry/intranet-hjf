@@ -97,11 +97,11 @@
             <div class="carousel-inner">
               <div class='carousel-item active zoom' >
                 {loop="$posts"}
-                <a href="/blog/{$value.idpost}/{$value.titulo}"><img class="d-block w-100" src="{$value.desphoto}" alt="{$value.titulo}"></a>
+                <a href="/blog/{$value.idpost}/{$value.titulo}"><img class="d-block w-100 img-fluid" src="{$value.desphoto}" alt="{$value.titulo}" ></a>
               </div>
               <div class='carousel-item zoom'>
               {/loop}
-              <img class="d-block w-100" src="/res/site/img/endoscopia_da_coluna.jpg" alt="">
+              <img class="d-block w-100" src="/res/site/img/endoscopia_da_coluna.jpg" alt="" >
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -60,8 +60,7 @@ $app->get('/admin/logout', function() {
 
 $app->get("/admin/ausente", function() {
  
-	if ($_SESSION[User::SESSION] && (int)$_SESSION[User::SESSION]["id_user"] > 0 &&	(bool)$_SESSION[User::SESSION]["id_user"] === true
-	) {
+	if ($_SESSION[User::SESSION] && (int)$_SESSION[User::SESSION]["id_user"] > 0 &&	(bool)$_SESSION[User::SESSION]["id_user"] === true) {
 	
 		$user = new User();
 	 

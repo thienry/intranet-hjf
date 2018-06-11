@@ -6024,7 +6024,7 @@ a.waves-effect, a.waves-light {
     .navbar.navbar-light .navbar-nav .nav-item .nav-link.disbled:hover {
       color: #fff; }
   .navbar.navbar-light .navbar-toggler-icon {
-    color: #fff;
+    color: white;
     cursor: pointer; }
   .navbar.navbar-light .breadcrumb .nav-item .nav-link,
   .navbar.navbar-light .navbar-nav .nav-item .nav-link {
@@ -6042,7 +6042,7 @@ a.waves-effect, a.waves-light {
     .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover {
       color: #fff; }
   .navbar.navbar-light .navbar-toggler {
-    color: #fff; }
+    color: white; }
   .navbar.navbar-light form .md-form input {
     border-bottom: 1px solid #fff; }
     .navbar.navbar-light form .md-form input:focus:not([readonly]) {
@@ -6069,7 +6069,7 @@ a.waves-effect, a.waves-light {
     .navbar.navbar-dark .navbar-nav .nav-item .nav-link.disbled:hover {
       color: #fff; }
   .navbar.navbar-dark .navbar-toggler-icon {
-    color: #fff;
+    color: white;
     cursor: pointer; }
   .navbar.navbar-dark .breadcrumb .nav-item .nav-link,
   .navbar.navbar-dark .navbar-nav .nav-item .nav-link {

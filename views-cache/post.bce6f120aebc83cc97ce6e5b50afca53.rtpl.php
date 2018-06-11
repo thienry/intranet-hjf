@@ -138,8 +138,7 @@
                                                 <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                                     <h5 class="mt-0 mb-1 font-weight-bold"><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h5>
                                                 </a>
-                                                <?php echo formataStr($value1["texto"]); ?>
-
+                                                <?php echo cortaStr($value1["texto"]); ?>...
                                             </div>
                                         </li>
                                         <?php } ?>
