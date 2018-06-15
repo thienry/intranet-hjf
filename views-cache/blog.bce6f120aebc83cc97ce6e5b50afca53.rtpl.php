@@ -138,12 +138,18 @@
                 <!--Pagination-->
                 <nav class="d-flex justify-content-center wow fadeIn">
                     <ul class="pagination pg-blue">
-                        <?php $counter1=-1;  if( isset($pages) && ( is_array($pages) || $pages instanceof Traversable ) && sizeof($pages) ) foreach( $pages as $key1 => $value1 ){ $counter1++; ?>
+                        <li class='page-item active'>
+                            <?php if( $pagina > 1 ){ ?>
 
-                        <li class='page-item'>
-                            <a class="page-link" href="<?php echo htmlspecialchars( $value1["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["page"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a>
-                        </li>
-                        <?php } ?>               
+                            <a class="page-link btn btn-primary" href="<?php echo htmlspecialchars( $pages["antes"]["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Posts mais novos</a>
+                            <?php } ?>
+
+                            <?php if( $pagina <> $paginas ){ ?>
+
+                            <a class="page-link btn btn-primary" href="<?php echo htmlspecialchars( $pages["depois"]["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Posts mais Antigos</a>
+                            <?php } ?>
+
+                        </li> 
                     </ul>
                 </nav>
                 <!--Pagination-->

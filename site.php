@@ -41,22 +41,34 @@ $app->get('/blog/:idpost/:titulo', function($idpost, $titulo) {
 
 $app->get('/blog', function() {
 	
-	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+	$pagina = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 	
 	$post = Post::listAll();
 
 	$posts = new Post();
 
-	$pagination = $posts->getPostsPage($page);
+	$pagination = $posts->getPostsPage($pagina);
 
-	$pages = [];
+	$pages = [ 
+		
+		'antes' => [
+			
+			'link'=>'/blog'.'?page='.($pagina - 1)
+	
+		],
+	
+		'depois' => [
+	
+			'link'=>'/blog'.'?page='.($pagina + 1) 
+	
+		] 
+		
+	];
 
-	for ($i=1; $i<=$pagination['pages']; $i++) {
+	if($pagina > $pagination['pages']) {
 
-		array_push($pages, [
-			'link'=>'/blog'.'?page='.$i,
-			'page'=>$i
-		]);
+		header('Location: /blog');
+		exit;
 
 	}
 
@@ -65,7 +77,9 @@ $app->get('/blog', function() {
 	$page->setTpl("blog", array(
 		"posts"=>Post::checkList($post),
 		"posts"=>$pagination['data'],
-		"pages"=>$pages
+		"paginas"=>$pagination['pages'],
+		"pages"=>$pages,
+		"pagina"=>$pagina
 	));
 
 });
