@@ -65,7 +65,7 @@ $app->get('/blog', function() {
 		
 	];
 
-	if($pagina > $pagination['pages']) {
+	if($pagina > $pagination['pages'] || $pagina < 1 ) {
 
 		header('Location: /blog');
 		exit;
