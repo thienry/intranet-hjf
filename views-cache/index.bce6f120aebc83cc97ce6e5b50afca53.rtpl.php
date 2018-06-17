@@ -64,22 +64,14 @@
                 <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
 
                 <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-block w-100 img-fluid" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="height: 500px;" ></a>
-                <!-- Content -->
-              <div class="text-center white-text mx-5 wow fadeIn">
-                <h1 class="mb-4">
-                  <strong><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong>
-                </h1>
-                <p class="mb-4 d-none d-md-block">
-                  <strong><?php echo cortaStr($value1["texto"]); ?></strong>
-                </p>
-                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-outline-white btn-lg">Saiba Mais.</a>
-              </div>
-              <!-- Content -->
+                <div class="carousel-caption d-none d-md-block wow fadeIn">
+                  <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary">Saiba Mais</a>
+                </div>
               </div>
               <div class='carousel-item zoom'>
               <?php } ?>
 
-              <img class="d-block w-100" src="/res/site/img/endoscopia_da_coluna.jpg" alt="" >
+              <img class="d-block w-100" src="/res/site/img/endoscopia_da_coluna.jpg" alt="" style="height: 500px;" >
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
