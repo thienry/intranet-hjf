@@ -126,7 +126,7 @@ class Post extends Model {
 
     }
 
-    public function getPostsPage($page = 1, $itemsPerPage = 3) {
+    public function getPostsPage($page = 1, $itemsPerPage = 5) {
 
         $start = ($page-1) * $itemsPerPage;
 
