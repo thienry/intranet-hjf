@@ -1,39 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Intranet - Jayme da fonte</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="/res/site/css/bootstrap.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="/res/site/css/mdb.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href="/res/site/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="/res/admin/plugins/datatables/dataTables.bootstrap4.min.css">
-    <!-- Ownl Carousel-->
-    <link rel="stylesheet" href="/res/site/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
-    <!-- Link do favicon -->
-    <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
-
-    <style type="text/css">
-      @media (min-width: 800px) and (max-width: 850px) {
-              .navbar:not(.top-nav-collapse) {
-                  background: #8d1d2e!important;
-              }
-          }
-    </style>
-</head>
-
-<body id="top">
-
-  <header>
+<?php if(!class_exists('Rain\Tpl')){exit;}?>  <header>
 
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" id="scrollNav">
@@ -98,7 +63,18 @@
               <div class='carousel-item active zoom' >
                 <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
 
-                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-block w-100 img-fluid" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" ></a>
+                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-block w-100 img-fluid" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="height: 500px;" ></a>
+                <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong>
+                </h1>
+                <p class="mb-4 d-none d-md-block">
+                  <strong><?php echo cortaStr($value1["texto"]); ?></strong>
+                </p>
+                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-outline-white btn-lg">Saiba Mais.</a>
+              </div>
+              <!-- Content -->
               </div>
               <div class='carousel-item zoom'>
               <?php } ?>
@@ -333,76 +309,3 @@
     </div>
   </main>
   <!--Main layout-->
-
- <a class="scroll-to-top rounded" data-toggle="tooltip" data-placement="top" title="Voltar ao topo" href="#top" style="display: inline;">
-   <i class="fa fa-angle-up"></i>
- </a>
-
-  <!--Footer-->
-  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2018 Copyright:
-      <a href="http://www.fasortec.com.br" target="_blank"> Equipe de TI </a>
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
-  <!--/.Footer-->
-
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="/res/site/js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="/res/site/js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/res/site/js/bootstrap.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/res/site/js/mdb.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="/res/site/js/scrolltotop.js"></script>
-    <script type="text/javascript" src="/res/site/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
-    <script type="text/javascript" src="/res/admin/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-    
-    <!-- Initializations -->
-    <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-
-    $(document).ready( function () {
-      $('#tabelaRamais').DataTable({
-
-        "language": {
-                    "lengthMenu": "",
-                    "zeroRecords": "Ramal ou Setor não encontrado",
-                    "info": "Exibindo página _PAGE_ de _PAGES_",
-                    "infoEmpty": "-",
-                    "infoFiltered": "",
-                    "search": "Pesquisar",
-                    "paginate": {
-                        "next": "Próximo",
-                        "previous": "Anterior",
-                        "first": "Primeiro",
-                        "last": "Último"
-                    }
-
-                 }
-
-      });
-
-      $(".owl-carousel").owlCarousel({
-
-        items:2,
-        loop:true,
-        margin:10,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true
-
-      });
-       
-    });
-
-  </script>
-</body>
-</html>
