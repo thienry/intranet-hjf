@@ -63,6 +63,17 @@
               <div class='carousel-item active zoom' >
                 {loop="$posts"}
                 <a href="/blog/{$value.idpost}/{$value.titulo}"><img class="d-block w-100 img-fluid" src="{$value.desphoto}" alt="{$value.titulo}" style="height: 500px;" ></a>
+                <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>{$value.titulo}</strong>
+                </h1>
+                <p class="mb-4 d-none d-md-block">
+                  <strong>{function="cortaStr($value.texto)"}</strong>
+                </p>
+                <a href="/blog/{$value.idpost}/{$value.titulo}" class="btn btn-outline-white btn-lg">Saiba Mais.</a>
+              </div>
+              <!-- Content -->
               </div>
               <div class='carousel-item zoom'>
               {/loop}
