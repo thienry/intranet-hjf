@@ -109,10 +109,10 @@ $app->post('/notificacao', function() {
 
 	$notificacao->setData($_POST);
 
-	$notificacao->sendNotification();
-
+	$notificacao->save();
 	
-
+	$notificacao->sendNotification();
+	
 	header("Location: /notificacao?success=1");
     exit;
 
