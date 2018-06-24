@@ -4,10 +4,10 @@ namespace Thiago\DB;
 
 class Sql {
 
-	const HOSTNAME = "us-cdbr-iron-east-04.cleardb.net";
-	const USERNAME = "b41bf7bc49a310";
-	const PASSWORD = "0f22a157a1890a8";
-	const DBNAME = "heroku_ed0d2e3a8c59395";
+	const HOSTNAME = "localhost";
+	const USERNAME = "root";
+	const PASSWORD = "";
+	const DBNAME = "db_intranet";
 	const CHARSET = "utf8";
 
 	private $conn;

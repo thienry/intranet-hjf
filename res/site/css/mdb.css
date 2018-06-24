@@ -24,6 +24,13 @@
  * Atribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
  *
  */
+
+ .hove:hover {
+
+   background: #8d1d2e;
+
+ }
+
 .mdb-color.lighten-5 {
   background-color: #d0d6e2 !important; }
 
@@ -5965,7 +5972,7 @@ a.waves-effect, a.waves-light {
     font-weight: 400; }
 
 .dropdown .dropdown-menu .dropdown-item:active {
-  background-color: #757575; }
+  background-color: none; }
 
 .navbar {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -6894,7 +6901,8 @@ body.scrollable {
 
 footer.page-footer {
   bottom: 0;
-  color: #fff; }
+  color: #fff;
+}
   footer.page-footer .container-fluid {
     width: auto; }
   footer.page-footer .footer-copyright {
@@ -6993,3 +7001,10 @@ table.table-sm td {
 .full-height header,
 .full-height header .view {
   height: 100%; }
+
+.hover-in{
+  transition: .3s ease-out;
+}
+.hover-out{
+  transition: .3s ease-in;
+}

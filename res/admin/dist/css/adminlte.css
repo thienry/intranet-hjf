@@ -12169,14 +12169,16 @@ label:not(.form-check-label):not(.custom-file-label) {
   color: #444;
 }
 
-.login-page,
+.login-page {
+  background: #8d1d2e;
+}
 .register-page {
-  background: #e9ecef;
+  background: #fae1e1;
 }
 
 .login-box,
 .register-box {
-  width: 360px;
+  width: 60%;
   margin: 7% auto;
 }
 

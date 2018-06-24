@@ -4,6 +4,7 @@ use \Thiago\Page;
 use \Thiago\Model\Ramal;
 use \Thiago\DB\Sql;
 use \Thiago\Model\Post;
+use \Thiago\Model\Notificacao;
 
 
 $app->get('/', function() {
@@ -88,6 +89,32 @@ $app->get('/blog', function() {
 		"pages"=>$pages,
 		"pagina"=>$pagina
 	));
+	
+});
+
+$app->get('/notificacao', function() {
+
+	$success = isset($_GET['success']) ? $_GET['success'] : 0;
+
+	$page = new Page();
+	
+	$page->setTpl("notificacao", array(
+		"success"=>$success
+	));
+});
+
+$app->post('/notificacao', function() {
+
+	$notificacao = new Notificacao();
+
+	$notificacao->setData($_POST);
+
+	$notificacao->sendNotification();
+
+	
+
+	header("Location: /notificacao?success=1");
+    exit;
 
 });
 
