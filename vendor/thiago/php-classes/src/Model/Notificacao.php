@@ -37,8 +37,6 @@ class Notificacao extends Model {
         $results = $sql->select("SELECT * FROM tb_notificacao ORDER BY id_notificacao DESC LIMIT 1");
 
         $data = $results[0];
-
-             
        
         $mailer = new Mailer($data["nome_pac"], $data["dt_nasc"], $data["prontuario"], $data["registro"], $data["dt_relato"], $data["dt_oco"], $data["hr_oco"], $data["st_cante"], $data["st_cado"], $data["descricao"], "Notificacao Jayme da Fonte", "sendnotification", array(
             "name_pac"=>$data["nome_pac"],
@@ -54,8 +52,6 @@ class Notificacao extends Model {
         ));
 
         $mailer->send();
-
-        return $data;
 
     }
 

@@ -3,16 +3,18 @@
 namespace Thiago;
 
 use Rain\Tpl;
+use Thiago\Model\Notificacao;
 
 class Mailer {
 
+    
     const USERNAME = "thiagodevelloper@gmail.com";
     const PASSWORD = "qwerty!@#$%";
     const NAME_FROM = "Notificacoes HJF";
 
     private $mail;
 
-    public function __construct($tplName, $data = []) {
+    public function __construct($nome_pac, $dt_nasc, $prontuario, $registro, $dt_relato, $dt_oco, $hr_oco, $st_cante, $st_cado, $descricao, $subject, $tplName, $data = []) {
 
         $config = array(
             "tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
@@ -28,13 +30,21 @@ class Mailer {
             $tpl->assign($key, $value);
         }
 
-        $html = $this->tpl->draw($tplName, true);
+        $html = $tpl->draw($tplName, true);
 
         //Create a new PHPMailer instance
         $this->mail = new \PHPMailer;
 
         //Tell PHPMailer to use SMTP
         $this->mail->isSMTP();
+
+        $this->mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+         );
 
         //Enable SMTP debugging
         // 0 = off (for production use)
@@ -76,7 +86,7 @@ class Mailer {
         $this->mail->addAddress('thmoura14@gmail.com', 'Thiago');
 
         //Set the subject line
-        $this->mail->Subject = 'Foi realizada uma nova notificacao';
+        $this->mail->Subject = $subject;
 
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body

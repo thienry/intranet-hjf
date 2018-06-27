@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -401,56 +401,56 @@
           <div class="content">
             <div class="form-group">
                 <label for="nome">Nome do Paciente*: </label>
-                <input type="text" class="form-control" placeholder="Digite o nome do paciente" id="nome" value="{$name_pac}" name="nome_pac" readonly>
+                <input type="text" class="form-control" placeholder="Digite o nome do paciente" id="nome" value="<?php echo htmlspecialchars( $name_pac, ENT_COMPAT, 'UTF-8', FALSE ); ?>" name="nome_pac" readonly>
               </div>
               
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="dt_nasc">Data de Nasc.*:</label>
-                  <input type="text" class="form-control" id="dt_nasc" name="dt_nasc" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" value="{$dt_nasc}" readonly>
+                  <input type="text" class="form-control" id="dt_nasc" name="dt_nasc" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" value="<?php echo htmlspecialchars( $dt_nasc, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="prontuario">Numero de Prontuario*:</label>
-                  <input type="number" class="form-control" id="prontuario" name="prontuario" placeholder="Digite o numero do prontuario" value="{$prontuario}" readonly>
+                  <input type="number" class="form-control" id="prontuario" name="prontuario" placeholder="Digite o numero do prontuario" value="<?php echo htmlspecialchars( $prontuario, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
               </div>
     
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="registro">Registro*:</label>
-                  <input type="number" class="form-control" id="registro" name="registro" placeholder="Digite o numero do registro" value="{$registro}" readonly>
+                  <input type="number" class="form-control" id="registro" name="registro" placeholder="Digite o numero do registro" value="<?php echo htmlspecialchars( $registro, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="dt_rel">Data do Relato*:</label>
-                  <input type="text" class="form-control" id="dt_rel" name="dt_relato" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" value="{$dt_relato}" readonly>
+                  <input type="text" class="form-control" id="dt_rel" name="dt_relato" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" value="<?php echo htmlspecialchars( $dt_relato, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
               </div>
     
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="dt_oco">Data Ocorrencia*:</label>
-                  <input type="text" class="form-control" id="dt_oco" name="dt_oco" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" value="{$dt_oco}" readonly>
+                  <input type="text" class="form-control" id="dt_oco" name="dt_oco" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" value="<?php echo htmlspecialchars( $dt_oco, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="hr_oco">Hora Ocorrencia*:</label>
-                  <input type="time" class="form-control" id="hr_oco" name="hr_oco" placeholder="" value="{$hr_oco}" readonly>
+                  <input type="time" class="form-control" id="hr_oco" name="hr_oco" placeholder="" value="<?php echo htmlspecialchars( $hr_oco, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
               </div>
               
               <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="st_cante">Setor Notificante*: </label>
-                    <input type="text" class="form-control" placeholder="Informe o setor notificante" id="st_cante" name="st_cante" value="{$st_cante}" readonly>
+                    <input type="text" class="form-control" placeholder="Informe o setor notificante" id="st_cante" name="st_cante" value="<?php echo htmlspecialchars( $st_cante, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="st_cado">Setor Notificado*: </label>
-                    <input type="text" class="form-control" placeholder="Informe o setor que sera notificado" id="st_cado" name="st_cado" value="{$st_cado}" readonly>
+                    <input type="text" class="form-control" placeholder="Informe o setor que sera notificado" id="st_cado" name="st_cado" value="<?php echo htmlspecialchars( $st_cado, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                 </div>
               </div>
     
               <div class="form-group">
                 <label for="desc">Descrição da ocorrência*: </label>
-                <textarea id="desc" name="descricao" class="form-control" rows="5" readonly>{$descricao}</textarea>
+                <textarea id="desc" name="descricao" class="form-control" rows="5" readonly><?php echo htmlspecialchars( $descricao, ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
               </div>
           </div>
         </td>
