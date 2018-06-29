@@ -38,7 +38,8 @@ class Notificacao extends Model {
 
         $data = $results[0];
        
-        $mailer = new Mailer($data["nome_pac"], $data["dt_nasc"], $data["prontuario"], $data["registro"], $data["dt_relato"], $data["dt_oco"], $data["hr_oco"], $data["st_cante"], $data["st_cado"], $data["descricao"], "Notificacao Jayme da Fonte", "sendnotification", array(
+        $mailer = new Mailer($data["id_notificacao"], $data["nome_pac"], $data["dt_nasc"], $data["prontuario"], $data["registro"], $data["dt_relato"], $data["dt_oco"], $data["hr_oco"], $data["st_cante"], $data["st_cado"], $data["descricao"], "Notificacao Jayme da Fonte", "email", array(
+            "id_notificacao"=>$data["id_notificacao"],
             "name_pac"=>$data["nome_pac"],
             "dt_nasc"=>$data["dt_nasc"],
             "prontuario"=>$data["prontuario"],

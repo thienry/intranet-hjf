@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Blog - Jayme da Fonte</title>
+    <title>blog - Jayme da Fonte</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -16,7 +16,7 @@
     <link href="/res/site/css/style2.css" rel="stylesheet">
 </head>
 
-<body id="top">
+<body id="top" class="grey lighten-3">
 
     <!--Main Navigation-->
     <header>
@@ -75,6 +75,7 @@
 
                 </div>
 
+
             </div>
         </nav>
         <!-- Navbar -->
@@ -85,94 +86,96 @@
     <!--Main layout-->
     <main class="mt-5 pt-5">
         <div class="container">
-
-            <!--Section: Jumbotron-->
-            <section class="gradient-custom  wow fadeIn">
-
-                <!-- Content -->
-                <div class="jumbotron gradient-custom">
-                    <h1 class="display-4" style="color: aliceblue">Blog Jayme da Fonte!</h1>
-                    <p class="lead" style="color: aliceblue"></p>
-                    <hr class="my-4">
-                    <p style="color: aliceblue"></p>
-                </div>
-            </section>
-            <!--Section: Jumbotron-->
-
-            <!--Section: Cards-->
-            <section class="pt-5">
-
-                {loop="$posts"}
+            <!--Section: Post-->
+            <section class="mt-4">
                 <!--Grid row-->
-                <div class="row mt-3 wow fadeIn">
-
+                <div class="row">
                     <!--Grid column-->
-                    <div class="col-lg-5 col-xl-4 col-md-8 mb-4">
-                        <!--Featured image-->
-                        <div class="z-depth-1 zoom">
-                            
-                            <a href="/blog/{$value.idpost}/{$value.titulo}">
-                                <img src="{$value.desphoto}" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                    <div class="col mb-4">
+                        <!--Featured Image-->
+                        <div class="card mb-4 wow fadeIn">
+                            <img src="<?php echo htmlspecialchars( $post["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid" style="height: 400px;" alt="">
                         </div>
                     </div>
-                    <!--Grid column-->
+                </div>
 
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
-                        <h3 class="mb-3 font-weight-bold dark-grey-text">
-                                {$value.titulo}
-                        </h3>
-                        <p class="grey-text">{function="cortaStr($value.texto)"} ...</p>
-                        <a href="/blog/{$value.idpost}/{$value.titulo}" class="btn btn-primary btn-md">Leia mais
-                            <i class="fa fa-play ml-2"></i>
-                        </a>
+                <div class="row">
+                    <div class="col-md-8">
+                        <!--Card-->
+                        <div class="card mb-4 wow fadeIn">
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <blockquote class="blockquote">
+                                   
+                                    <footer class="blockquote-footer"><strong>Autor:</strong> <cite title="Source Title"> <?php echo htmlspecialchars( $post["autor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></cite>
+                                        
+                                        <br>
+                                        Atualizado em <?php echo formatDate($post["dtpost"]); ?>
+                                    </footer>
+                                </blockquote>
+
+                                <h4 class="mb-3 font-weight-bold dark-grey-text"><strong><?php echo htmlspecialchars( $post["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong>
+                                </h4>
+
+                                <p style="text-align: justify;"><?php echo formataStr($post["texto"]); ?></p>
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->    
+
                     </div>
-                    <!--Grid column-->
+                    <!--/ .Col-->
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card mb-4 wow fadeIn">
+                            <div class="card-header">Ultimas Postagens</div>
+                            <!--Card content-->
+                            <div class="card-body">
+    
+                                    <ul class="list-unstyled">
+                                        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
+                                        <li class="media my-4">
+                                                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-flex mr-3" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="height: 30px; width: 70px;"></a>
+                                            <div class="media-body">
+                                                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                                                    <h5 class="mt-0 mb-1 font-weight-bold"><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h5>
+                                                </a>
+                                                <?php echo cortaStr($value1["texto"]); ?>...
+                                            </div>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+    
+                                </div>
+                        </div>
+                    </div>
 
                 </div>
-                <!--Grid row-->
-
-                <hr class="mb-5">
-
-                {/loop}
-
-
-                <!--Pagination-->
-                <nav class="d-flex justify-content-center wow fadeIn">
-                    <ul class="pagination pg-blue">
-                        <li class='page-item active'>
-                            {if="$pagina > 1"}
-                            <a class="page-link btn btn-primary" href="{$pages.antes.link}">Posts mais novos</a>
-                            {/if}
-                            {if="$pagina <> $paginas"}
-                            <a class="page-link btn btn-primary" href="{$pages.depois.link}">Posts mais Antigos</a>
-                            {/if}
-                        </li> 
-                    </ul>
-                </nav>
-                <!--Pagination-->
-
+                <!--/ .Row-->
             </section>
-            <!--Section: Cards-->
+            <!--Section: Post-->
 
         </div>
+        <!--/. Container-->
+
     </main>
     <!--Main layout-->
 
-    <!-- botao scroll to top-->
-    <a class="scroll-to-top rounded" data-toggle="tooltip" data-placement="top" title="Voltar ao topo" href="#top" style="display: inline;">
-        <i class="fa fa-angle-up"></i>
-    </a>
-
     <!--Footer-->
-    <footer class="page-footer text-center font-small mdb-color  wow fadeIn">
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+        <!-- botao scroll to top-->
+        <a class="scroll-to-top rounded" data-toggle="tooltip" data-placement="top" title="Voltar ao topo" href="#top" style="display: inline;">
+            <i class="fa fa-angle-up"></i>
+        </a>
 
         <!--Copyright-->
         <div class="footer-copyright py-3">
             © 2018 Copyright:
-            <a href="https://www.fasortec.com.br/" target="_blank"> Equipe de TI </a>
+            <a href="http://www.fasortec.com.br/" target="_blank"> Equipe de TI </a>
         </div>
         <!--/.Copyright-->
 
@@ -187,9 +190,10 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="/res/site/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/res/site/js/mdb.js"></script>
-    
+    <script type="text/javascript" src="/res/site/js/mdb.min.js"></script>
+
     <script type="text/javascript" src="/res/site/js/scrolltotop.js"></script>
+
     <!-- Initializations -->
     <script type="text/javascript">
         // Animations initialization

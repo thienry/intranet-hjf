@@ -28,7 +28,7 @@
               <a class="nav-link js-scroll-trigger" href="#ramais"> Ramais </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="//ecm/" target="_blank">Documentos Institucionais</a>
+              <a class="nav-link" href="http://ecm:8080/share/page/site/institucional/documentlibrary" target="_blank">Documentos Institucionais</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,7 +70,6 @@
             <div class="carousel-inner">
               <div class='carousel-item active zoom' >
                 <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
-
                 <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img class="d-block w-100 img-fluid" src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="height: 500px;" ></a>
                 <div class="carousel-caption d-none d-md-block wow fadeIn">
                   <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary">Saiba Mais</a>
@@ -78,8 +77,7 @@
               </div>
               <div class='carousel-item zoom'>
               <?php } ?>
-
-              <img class="d-block w-100" src="/res/site/img/endoscopia_da_coluna.jpg" alt="" style="height: 500px;" >
+              <img class="d-block w-100" src="/res/site/img/dengue_zica_chikungunya.jpg" alt="" style="height: 500px;" >
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -240,7 +238,6 @@
                       <!--Table body-->
                       <tbody>
                         <?php $counter1=-1;  if( isset($ramal) && ( is_array($ramal) || $ramal instanceof Traversable ) && sizeof($ramal) ) foreach( $ramal as $key1 => $value1 ){ $counter1++; ?>
-
                           <tr>
                               <th><?php echo htmlspecialchars( $value1["setor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
                               <td><?php echo htmlspecialchars( $value1["ramal"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
@@ -248,7 +245,6 @@
                           </tr>
 
                         <?php } ?>
-
                           
                       </tbody>
                       <!--Table body-->

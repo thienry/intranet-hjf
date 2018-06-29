@@ -29,7 +29,7 @@
                 <a class="nav-link js-scroll-trigger" href="#ramais"> Ramais </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="//ecm/" target="_blank">Documentos Institucionais</a>
+                <a class="nav-link" href="http://ecm:8080/share/page/site/institucional/documentlibrary" target="_blank">Documentos Institucionais</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,11 +70,10 @@
 
 <div class="container">
   <?php if( $success == 1 ){ ?>
-
   <div class="row">
     <div class="col-md-12">
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-        Sua notificacao foi enviada com <strong>suscesso</strong>
+        Sua notificacao foi enviada com <strong>sucesso</strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -82,7 +81,6 @@
     </div>
   </div>
   <?php } ?>
-
   <div class="row">
     <div class="col-md-10">
       <div class="card wow bounceInUp">

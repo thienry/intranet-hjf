@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -102,7 +102,7 @@
             <!--Section: Cards-->
             <section class="pt-5">
 
-                {loop="$posts"}
+                <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?>
                 <!--Grid row-->
                 <div class="row mt-3 wow fadeIn">
 
@@ -111,8 +111,8 @@
                         <!--Featured image-->
                         <div class="z-depth-1 zoom">
                             
-                            <a href="/blog/{$value.idpost}/{$value.titulo}">
-                                <img src="{$value.desphoto}" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
+                            <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                                <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="img-fluid img-thumbnail" alt="" style="height: 150px; width: 100%;">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>
@@ -122,10 +122,10 @@
                     <!--Grid column-->
                     <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
                         <h3 class="mb-3 font-weight-bold dark-grey-text">
-                                {$value.titulo}
+                                <?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
                         </h3>
-                        <p class="grey-text">{function="cortaStr($value.texto)"} ...</p>
-                        <a href="/blog/{$value.idpost}/{$value.titulo}" class="btn btn-primary btn-md">Leia mais
+                        <p class="grey-text"><?php echo cortaStr($value1["texto"]); ?> ...</p>
+                        <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-md">Leia mais
                             <i class="fa fa-play ml-2"></i>
                         </a>
                     </div>
@@ -136,19 +136,19 @@
 
                 <hr class="mb-5">
 
-                {/loop}
+                <?php } ?>
 
 
                 <!--Pagination-->
                 <nav class="d-flex justify-content-center wow fadeIn">
                     <ul class="pagination pg-blue">
                         <li class='page-item active'>
-                            {if="$pagina > 1"}
-                            <a class="page-link btn btn-primary" href="{$pages.antes.link}">Posts mais novos</a>
-                            {/if}
-                            {if="$pagina <> $paginas"}
-                            <a class="page-link btn btn-primary" href="{$pages.depois.link}">Posts mais Antigos</a>
-                            {/if}
+                            <?php if( $pagina > 1 ){ ?>
+                            <a class="page-link btn btn-primary" href="<?php echo htmlspecialchars( $pages["antes"]["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Posts mais novos</a>
+                            <?php } ?>
+                            <?php if( $pagina <> $paginas ){ ?>
+                            <a class="page-link btn btn-primary" href="<?php echo htmlspecialchars( $pages["depois"]["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Posts mais Antigos</a>
+                            <?php } ?>
                         </li> 
                     </ul>
                 </nav>

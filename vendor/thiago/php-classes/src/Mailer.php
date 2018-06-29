@@ -14,7 +14,7 @@ class Mailer {
 
     private $mail;
 
-    public function __construct($nome_pac, $dt_nasc, $prontuario, $registro, $dt_relato, $dt_oco, $hr_oco, $st_cante, $st_cado, $descricao, $subject, $tplName, $data = []) {
+    public function __construct($id_notificacao, $nome_pac, $dt_nasc, $prontuario, $registro, $dt_relato, $dt_oco, $hr_oco, $st_cante, $st_cado, $descricao, $subject, $tplName, $data = []) {
 
         $config = array(
             "tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
@@ -83,7 +83,7 @@ class Mailer {
         //$this->mail->addReplyTo('replyto@example.com', 'First Last');
 
         //Set who the message is to be sent to
-        $this->mail->addAddress('thmoura14@gmail.com', 'Thiago');
+        $this->mail->addAddress('notificacoes@jaymedafonte.com.br', 'Notificacao');
 
         //Set the subject line
         $this->mail->Subject = $subject;
@@ -93,7 +93,7 @@ class Mailer {
         $this->mail->msgHTML($html);
 
         //Replace the plain text body with one created manually
-        $this->mail->AltBody = 'This is a plain-text message body';
+        $this->mail->AltBody = 'Foi realizada uma nova notificacao.';
 
         //Attach an image file
         //$this->mail->addAttachment('images/phpmailer_mini.png');
