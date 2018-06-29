@@ -31,9 +31,7 @@
     <!-- Bootstrap 4 -->
     <script type="text/javascript" src="/res/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Hover3d-->
-    <script type="text/javascript" src="/res/site/js/hover3d.js"></script>
-    <!-- DateDropper -->
-    <script type="text/javascript" src="/res/site/js/datedropper.js"></script>    
+    <script type="text/javascript" src="/res/site/js/hover3d.js"></script>    
     <!-- Initializations -->
     <script type="text/javascript">
     // Animations initialization
@@ -74,11 +72,7 @@
       $(".project").hover3d({
         selector: ".project__card"
       });
-
-      $('#dt_oco').dateDropper();
-      $('#dt_rel').dateDropper();
-      $('#dt_nasc').dateDropper();
-       
+      
     });
  
    </script>

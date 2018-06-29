@@ -103,10 +103,10 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="dt_nasc">Data de Nasc.*:</label>
-              <input type="text" class="form-control" id="dt_nasc" name="dt_nasc" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" required>
+              <input type="date" class="form-control" id="dt_nasc" name="dt_nasc" required>
             </div>
             <div class="form-group col-md-6">
-              <label for="prontuario">Numero de Prontuario*:</label>
+              <label for="prontuario">Número de Prontuário*:</label>
               <input type="number" class="form-control" id="prontuario" name="prontuario" placeholder="Digite o numero do prontuario" required>
             </div>
           </div>
@@ -118,14 +118,14 @@
             </div>
             <div class="form-group col-md-6">
               <label for="dt_rel">Data do Relato*:</label>
-              <input type="text" class="form-control" id="dt_rel" name="dt_relato" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" required>
+              <input type="date" class="form-control" id="dt_rel" name="dt_relato" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="dt_oco">Data Ocorrencia*:</label>
-              <input type="text" class="form-control" id="dt_oco" name="dt_oco" data-lang="pt" data-format="j/m/Y" data-large-mode="true" data-large-default="true" data-min-year="1900" placeholder="" required>
+              <input type="date" class="form-control" id="dt_oco" name="dt_oco" required>
             </div>
             <div class="form-group col-md-6">
               <label for="hr_oco">Hora Ocorrencia*:</label>

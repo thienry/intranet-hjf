@@ -129,6 +129,10 @@
                 height: auto !important;
             }
         }
+
+        .form-group {
+            color: #000;
+        }
     </style>
     <!--[if gte mso 9]><style type=”text/css”>
         body {
@@ -266,37 +270,37 @@
                                                   <form class="form-horizontal">                                                    
                                                     <hr />
                                                     <div class="form-group">
-                                                      <label>ID: {$id_notificacao} </label>
+                                                      <label><strong>ID:</strong> {$id_notificacao} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                      <label>Nome: {$name_pac} </label>
+                                                      <label><strong>Nome:</strong> {$name_pac} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Data de Nasc.: {$dt_nasc} </label>
+                                                        <label><strong>Data de Nasc.:</strong> {function="formatDate($dt_nasc)"} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Numero de Prontuario: {$prontuario} </label>
+                                                        <label><strong>Numero de Prontuario:</strong> {$prontuario} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label >Numero do Registro: {$registro} </label>
+                                                        <label ><strong>Numero do Registro:</strong> {$registro} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Data do Relato: {$dt_relato} </label>
+                                                        <label ><strong>Data do Relato:</strong> {function="formatDate($dt_relato)"}</label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Data Ocorrencia: {$dt_oco} </label>
+                                                        <label><strong>Data Ocorrencia:</strong> {function="formatDate($dt_oco)"} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Hora da Ocorrencia: {$hr_oco} </label>
+                                                        <label><strong>Hora da Ocorrencia:</strong> {$hr_oco} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Setor Notificante: {$st_cante} </label>
+                                                        <label><strong>Setor Notificante:</strong> {$st_cante} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Setor Notificado: {$st_cado} </label>
+                                                        <label><strong>Setor Notificado:</strong> {$st_cado} </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Descricao: {$descricao} </label>
+                                                        <label><strong>Descricao:</strong> {$descricao} </label>
                                                     </div>
                                                     
                                                   </form>

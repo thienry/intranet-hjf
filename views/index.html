@@ -103,16 +103,16 @@
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <div class="centralizar">
-              <a href="/blog"><img src="/res/site/img/svg/blogger.svg" class="" ></a>
+              <a href="/notificacao"><img src="/res/site/img/svg/notification.svg" class="img-fluid img-responsive" ></a>
             </div>
             <div class="text-icons">
-              <h3 class="h3 mb-3">Blog HJF</h3>
-              <p>Aqui voce fica por dentro de todas as novidades do hospital.</p>
+              <h3 class="h3 mb-3">Notificação de Eventos</h3>
+              <p>Aqui você pode enviar uma Notificação de qualquer evento de risco ocorrido no hospital.</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-12">
             <div class="centralizar">
-              <a class="js-scroll-trigger" href="#ramais"><img src="/res/site/img/svg/telephone.svg"></a>
+              <a class="js-scroll-trigger" href="#ramais"><img src="/res/site/img/svg/telephone.svg" class="img-fluid img-responsive"></a>
             </div>
             <div class="text-icons">
               <h3 class="h3 mb-3">Encontre o Colaborador</h3>
@@ -122,7 +122,7 @@
           </div>          
           <div class="col-md-4 col-sm-12">
             <div class="centralizar">
-              <a href="//ecm" target="_blank"><img src="/res/site/img/svg/file.svg" class=""></a>
+              <a href="//ecm" target="_blank"><img src="/res/site/img/svg/file.svg" class="img-fluid img-responsive"></a>
             </div>
             <div class="text-icons">
               <h3 class="h3 mb-3">Documentos Institucionais</h3>
@@ -141,7 +141,7 @@
                 </div>
               </div>
           </div>
-          </div>
+        </div>
         </div>
       </section>
 

@@ -129,6 +129,10 @@
                 height: auto !important;
             }
         }
+
+        .form-group {
+            color: #000;
+        }
     </style>
     <!--[if gte mso 9]><style type=”text/css”>
         body {
@@ -266,37 +270,37 @@
                                                   <form class="form-horizontal">                                                    
                                                     <hr />
                                                     <div class="form-group">
-                                                      <label>ID: <?php echo htmlspecialchars( $id_notificacao, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                      <label><strong>ID:</strong> <?php echo htmlspecialchars( $id_notificacao, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                      <label>Nome: <?php echo htmlspecialchars( $name_pac, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                      <label><strong>Nome:</strong> <?php echo htmlspecialchars( $name_pac, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Data de Nasc.: <?php echo htmlspecialchars( $dt_nasc, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Data de Nasc.:</strong> <?php echo formatDate($dt_nasc); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Numero de Prontuario: <?php echo htmlspecialchars( $prontuario, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Numero de Prontuario:</strong> <?php echo htmlspecialchars( $prontuario, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label >Numero do Registro: <?php echo htmlspecialchars( $registro, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label ><strong>Numero do Registro:</strong> <?php echo htmlspecialchars( $registro, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Data do Relato: <?php echo htmlspecialchars( $dt_relato, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label ><strong>Data do Relato:</strong> <?php echo formatDate($dt_relato); ?></label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Data Ocorrencia: <?php echo htmlspecialchars( $dt_oco, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Data Ocorrencia:</strong> <?php echo formatDate($dt_oco); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Hora da Ocorrencia: <?php echo htmlspecialchars( $hr_oco, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Hora da Ocorrencia:</strong> <?php echo htmlspecialchars( $hr_oco, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Setor Notificante: <?php echo htmlspecialchars( $st_cante, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Setor Notificante:</strong> <?php echo htmlspecialchars( $st_cante, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Setor Notificado: <?php echo htmlspecialchars( $st_cado, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Setor Notificado:</strong> <?php echo htmlspecialchars( $st_cado, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Descricao: <?php echo htmlspecialchars( $descricao, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
+                                                        <label><strong>Descricao:</strong> <?php echo htmlspecialchars( $descricao, ENT_COMPAT, 'UTF-8', FALSE ); ?> </label>
                                                     </div>
                                                     
                                                   </form>

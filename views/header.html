@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="/res/site/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
     <!-- Link do favicon -->
     <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
-    <!-- DateDropper -->
-    <link rel="stylesheet" href="/res/site/css/datedropper.css">
     
     <style type="text/css">
       @media (min-width: 800px) and (max-width: 850px) {
