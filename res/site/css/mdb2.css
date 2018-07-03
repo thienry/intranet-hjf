@@ -6040,7 +6040,7 @@ a.waves-effect, a.waves-light {
     background-color: rgba(0, 0, 0, 0.1); }
     .navbar.navbar-light .breadcrumb .nav-item.active > .nav-link:hover,
     .navbar.navbar-light .navbar-nav .nav-item.active > .nav-link:hover {
-      color: #fff; }
+      color: #ccc; }
   .navbar.navbar-light .navbar-toggler {
     color: white; }
   .navbar.navbar-light form .md-form input {

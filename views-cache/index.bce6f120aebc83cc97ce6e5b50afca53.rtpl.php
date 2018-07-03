@@ -31,10 +31,8 @@
               <a class="nav-link" href="http://ecm:8080/share/page/site/institucional/documentlibrary" target="_blank">Documentos Institucionais</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ferramentas
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: #8d1d2e;">
+              <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ferramentas</a>
+              <div class="dropdown-menu " aria-labelledby="navbarDropdown" style="background: #8d1d2e">
                 <a class="dropdown-item" href="http://helpdesk" target="_blank">Helpdesk</a>
                 <a class="dropdown-item" href="//webmail" target="_blank">Webmail</a>
                 <a class="dropdown-item" href="//ebem.dinamus.net" target="_blank">Dinamus</a>
