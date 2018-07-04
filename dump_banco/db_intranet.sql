@@ -7,6 +7,10 @@
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
+CREATE DATABASE `db_intranet`;
+
+USE `db_intranet`;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;

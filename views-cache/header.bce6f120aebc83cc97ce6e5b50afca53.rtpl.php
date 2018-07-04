@@ -22,13 +22,24 @@
     <link rel="stylesheet" href="/res/site/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
     <!-- Link do favicon -->
     <link rel="shortcut icon" href="/res/admin/dist/img/favicon.ico" type="image/x-icon">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
     <style type="text/css">
       @media (min-width: 800px) and (max-width: 850px) {
               .navbar:not(.top-nav-collapse) {
                   background: #8d1d2e!important;
               }
           }
+
+          .main-img img,
+          .imgs img {
+            width: 100%;
+          }
+
+          .imgs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+          }
     </style>
 </head>
-

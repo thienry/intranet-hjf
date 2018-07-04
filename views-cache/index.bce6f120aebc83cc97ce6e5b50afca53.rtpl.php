@@ -117,17 +117,17 @@
               <p>O hospital é muito grande, não dá pra decorar todos os ramais.<br>
                   Encontre o colaborador desejado.</p>
             </div>
-          </div>          
+          </div>
           <div class="col-md-4 col-sm-12">
             <div class="centralizar">
               <a href="//ecm" target="_blank"><img src="/res/site/img/svg/file.svg" class="img-fluid img-responsive"></a>
             </div>
             <div class="text-icons">
               <h3 class="h3 mb-3">Documentos Institucionais</h3>
-              <p>Consulte os documentos providos do hospital. 
-                <br>     
+              <p>Consulte os documentos providos do hospital.
+                <br>
               *Para documentos comuns a todos os setores*</p>
-              
+
               <!-- Basic dropdown -->
               <div class="btn-group">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clique para obter credencial</button>
@@ -182,24 +182,59 @@
       <hr class="my-5">
 
       <section class="mt-5 wow fadeIn">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="imgs">
+              <a href="/res/site/img/meta-2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-2.jpg">
+              </a>
+              <a href="/res/site/img/meta-3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-3.jpg">
+              </a>
+              <a href="/res/site/img/meta-4.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-4.jpg">
+              </a>
+              <a href="/res/site/img/meta-5.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-5.jpg">
+              </a>
+              <a href="/res/site/img/meta-2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-2.jpg">
+              </a>
+              <a href="/res/site/img/meta-3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-3.jpg">
+              </a>
+              <a href="/res/site/img/meta-4.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-4.jpg">
+              </a>
+              <a href="/res/site/img/meta-5.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="zoom">
+                <img src="/res/site/img/meta-5.jpg">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-5">
+
+      <section class="mt-5 wow fadeIn">
 
         <div class="class">
 
             <h1 class="h1 mb-3" style="text-align: center">Metas Internacionais de Segurança do Paciente</h1>
             <p style="text-align: center">O hospital implementa 6 metas para segurança do paciente com o <br> objetivo de oferecer um ambiente cada vez mais seguro aos pacientes, acompanhantes e profissionais de saúde.</p>
-              
+
         </div>
         <br>
         <div class="owl-carousel">
-          
+
           <div> <img src="/res/site/img/meta-2.jpg" class="img-fluid px-4" alt="Meta 2"> </div>
           <div> <img src="/res/site/img/meta-3.jpg" class="img-fluid px-4" alt="Meta 3"> </div>
           <div> <img src="/res/site/img/meta-4.jpg" class="img-fluid px-4" alt="Meta 4"> </div>
           <div> <img src="/res/site/img/meta-5.jpg" class="img-fluid px-4" alt="Meta 5"> </div>
           <div> <img src="/res/site/img/meta-6.jpg" class="img-fluid px-4" alt="Meta 6"> </div>
-          
+
         </div>
-        
+
       </section>
         <!--Section: Main info-->
 
@@ -219,10 +254,10 @@
 
           <div class="card">
               <div class="card-body">
-          
+
                   <!--Table-->
                   <table id="tabelaRamais" class="table table-hover table-responsive-md table-fixed table-striped">
-          
+
                       <!--Table head-->
                       <thead>
                           <tr>
@@ -232,7 +267,7 @@
                           </tr>
                       </thead>
                       <!--Table head-->
-          
+
                       <!--Table body-->
                       <tbody>
                         <?php $counter1=-1;  if( isset($ramal) && ( is_array($ramal) || $ramal instanceof Traversable ) && sizeof($ramal) ) foreach( $ramal as $key1 => $value1 ){ $counter1++; ?>
@@ -243,17 +278,17 @@
                           </tr>
 
                         <?php } ?>
-                          
+
                       </tbody>
                       <!--Table body-->
-          
+
                   </table>
                   <!--Table-->
-          
+
               </div>
           </div>
       </section>
-        
+
       <hr class="my-5">
 
       <!--Section: Not enough-->
@@ -263,13 +298,13 @@
               <div class="carousel-item">
                   <!--Grid row-->
                   <div class="row">
-      
+
                       <!--First column-->
                       <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
                           <img src="/res/site/img/jayme-da-fonte-desde.png" class="img-fluid px-4" alt="jayme da fonte - logo" style="max-height: 60px">
                       </div>
                       <!--/First column-->
-      
+
                       <!--Second column-->
                       <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
                           <img src="/res/site/img/qualidade.png" class="img-fluid px-4" alt="" style="max-height: 60px">
@@ -284,30 +319,30 @@
                   <!--/Grid row-->
               </div>
               <!-- First slide -->
-      
+
               <!-- Second slide -->
               <div class="carousel-item active carousel-item-left">
                   <!--Grid row-->
                   <div class="row">
-      
+
                       <!--First column-->
                       <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
                           <img src="/res/site/img/jayme-da-fonte-desde.png" class="img-fluid px-4" alt="jayme da fonte - logo" style="max-height: 60px">
                       </div>
                       <!--/First column-->
-      
+
                       <!--Second column-->
                       <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
                           <img src="/res/site/img/qualidade.png" class="img-fluid px-4" alt="" style="max-height: 60px">
                       </div>
                       <!--/Second column-->
-      
+
                       <!--Third column-->
                       <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
                           <img src="/res/site/img/logo_acreditacao_qual.png" class="img-fluid px-4" alt="" style="max-height: 60px">
                       </div>
                       <!--/Third column-->
-      
+
                   </div>
                   <!--/Grid row-->
               </div>
