@@ -1,6 +1,6 @@
 # Intranet Hospital Jayme da Fonte
 
-The Intranet is a facility platform for the Hospital employee and also dissemination of relevant materials and events to all.
+Intranet is a facility platform for the Hospital employee and also dissemination of relevant materials and events to all.
 
 ## Getting Started
 
