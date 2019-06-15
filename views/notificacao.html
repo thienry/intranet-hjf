@@ -3,12 +3,13 @@
 <header>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8d1d2e;" >
       <div class="container">
 
           <!-- Brand -->
           <a class="navbar-brand" href="/">
-              <strong class="blue-text">Intranet</strong>
+            <img class="logo" src="/res/site/img/logo.png" alt="Intranet">
+            <strong class="white-text">Intranet</strong>
           </a>
 
           <!-- Collapse -->
@@ -25,11 +26,14 @@
               <li class="nav-item ">
                   <a class="nav-link" href="/blog">Blog</a>
               </li>
-              <li class="nav-item disabled">
-                <a class="nav-link js-scroll-trigger" href="#ramais"> Ramais </a>
+              <li class="nav-item">
+                <a class="nav-link" href="/events">Eventos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="http://ecm:8080/share/page/site/institucional/documentlibrary" target="_blank">Documentos Institucionais</a>
+                <a class="nav-link" href="/notificacao">Notificação</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/docs">Docs</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,12 +42,11 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: #8d1d2e;">
                   <a class="dropdown-item" href="http://helpdesk" target="_blank">Helpdesk</a>
                   <a class="dropdown-item" href="//webmail" target="_blank" >Webmail</a>
-                  <a class="dropdown-item" href="//ebem.dinamus.net" target="_blank">Dinamus</a>
+                  <a class="dropdown-item" href="//ebem.neovero.com" target="_blank">Ebem</a>
+		              <a class="dropdown-item" href="//sislu.dasa.com.br" target="_blank">Cerpe</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/notificacao">Notificação</a>
-              </li>
+              
             </ul>
 
               <!-- Right -->
@@ -66,9 +69,9 @@
 </header>
 <!--Main Navigation-->
 
-<main class="mt-5 pt-5">
+<main class="mt-5 pt-5 mb-5 pb-3">
 
-<div class="container">
+<div class="container ">
   {if="$success == 1"}
   <div class="row">
     <div class="col-md-12">
@@ -82,7 +85,7 @@
   </div>
   {/if}
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
       <div class="card wow bounceInUp">
         <div class="card-header" style="background-color: #8d1d2e;"> 
           <h3 style="text-align: center; color: aliceblue;">Formulário de Notificação<br>Hospital Jayme da Fonte</h3>
@@ -163,65 +166,6 @@
   </div>
 </div>
 
-<hr class="my-5">
-
-<!--Section: Not enough-->
-<div id="carouselExampleSlidesOnly" class="carousel slide wow slideInLeft" data-ride="carousel" data-interval="3000">
-    <div class="carousel-inner">
-        <!-- First slide -->
-        <div class="carousel-item">
-            <!--Grid row-->
-            <div class="row">
-
-                <!--First column-->
-                <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
-                    <img src="/res/site/img/jayme-da-fonte-desde.png" class="img-fluid px-4" alt="jayme da fonte - logo" style="max-height: 60px">
-                </div>
-                <!--/First column-->
-
-                <!--Second column-->
-                <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
-                    <img src="/res/site/img/qualidade.png" class="img-fluid px-4" alt="" style="max-height: 60px">
-                </div>
-                <!--/Second column-->
-                 <!--Third column-->
-                 <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
-                    <img src="/res/site/img/logo_acreditacao_qual.png" class="img-fluid px-4" alt="" style="max-height: 60px">
-                </div>
-                <!--/Third column-->
-            </div>
-            <!--/Grid row-->
-        </div>
-        <!-- First slide -->
-
-        <!-- Second slide -->
-        <div class="carousel-item active carousel-item-left">
-            <!--Grid row-->
-            <div class="row">
-
-                <!--First column-->
-                <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
-                    <img src="/res/site/img/jayme-da-fonte-desde.png" class="img-fluid px-4" alt="jayme da fonte - logo" style="max-height: 60px">
-                </div>
-                <!--/First column-->
-
-                <!--Second column-->
-                <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
-                    <img src="/res/site/img/qualidade.png" class="img-fluid px-4" alt="" style="max-height: 60px">
-                </div>
-                <!--/Second column-->
-
-                <!--Third column-->
-                <div class="col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
-                    <img src="/res/site/img/logo_acreditacao_qual.png" class="img-fluid px-4" alt="" style="max-height: 60px">
-                </div>
-                <!--/Third column-->
-
-            </div>
-            <!--/Grid row-->
-        </div>
-        <!-- Second slide -->
-    </div>
 </div>
 <!-- /.register-box -->
 </main>

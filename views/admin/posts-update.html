@@ -46,6 +46,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/popups" class="nav-link" style="color: aliceblue;">
+              <i class="nav-icon fa fa-picture-o"></i>
+              <p>Popups</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/ramais" class="nav-link"  style="color: aliceblue;">
               <i class="nav-icon fa fa-phone"></i>
               <p>Ramais</p>
@@ -120,8 +126,18 @@
                   
                   <!-- checkbox -->
                   <div class="form-group">
-                    <label for="id_user">
-                      <input type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='{function="getUserId()"}' required checked>
+                    <label for="post_active">
+                      <input type="checkbox" class="form-check-input flat-red" id="post_active" name="post_active" value='{function="getUserId()"}' >
+                      Banner Ativo? 
+                        {if="$post.post_active === 1"}
+                        <span> Sim </span>
+                        {else}
+                        <span> Não </span>
+                        {/if}
+                    </label>
+                    <br />
+                    <label style="display:none" for="id_user">
+                      <input  type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='{function="getUserId()"}' required checked>
                       Aceite os termos...
                     </label>
                   </div>
@@ -142,17 +158,13 @@
   <!-- /.content-wrapper -->
 
   <script>
+    
     document.querySelector('#file').addEventListener('change', function(){
-      
       var file = new FileReader();
-    
       file.onload = function() {
-        
         document.querySelector('#image-preview').src = file.result;
-    
       }
-    
       file.readAsDataURL(this.files[0]);
-    
     });
+
   </script>

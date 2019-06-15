@@ -5965,7 +5965,7 @@ a.waves-effect, a.waves-light {
     font-weight: 400; }
 
 .dropdown .dropdown-menu .dropdown-item:active {
-  background-color: #757575; }
+  background-color: #fff; }
 
 .navbar {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);

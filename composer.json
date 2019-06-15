@@ -1,9 +1,10 @@
 {
-    "name": "thienry/blog-intranet",
+    "name": "thienry/intranet-hjf",
+    "description": "",
     "authors": [
         {
             "name": "Thiago Moura",
-            "email": "thmoura14@hotmail.com"
+            "email": "thiago@jaymedafonte.com.br"
         }
     ],
     "require": {

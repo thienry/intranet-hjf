@@ -5967,7 +5967,7 @@ a.waves-effect, a.waves-light {
 
 .dropdown .dropdown-menu .dropdown-item:active {
   background-color: #ccc;
-  color: #000;
+  color: #fff;
  }
 
 .navbar {
@@ -6021,10 +6021,10 @@ a.waves-effect, a.waves-light {
       padding: 10px;
       font-size: 0.9375rem;
       font-weight: 300;
-      color: #000 !important; }
+      color: #fff !important; }
       .navbar .dropdown-menu a:hover {
-        background: #ccc;
-        color: #000;
+        background: #994a56;
+        color: #fafafa;
       }
   .navbar.navbar-light .navbar-nav .nav-item .nav-link.disbled {
     color: rgba(0, 0, 0, 0.3); }
@@ -6035,7 +6035,7 @@ a.waves-effect, a.waves-light {
     cursor: pointer; }
   .navbar.navbar-light .breadcrumb .nav-item .nav-link,
   .navbar.navbar-light .navbar-nav .nav-item .nav-link {
-    color: #000;
+    color: #fff;
     -webkit-transition: 0.35s;
     -o-transition: 0.35s;
     transition: 0.35s; }
@@ -6080,7 +6080,7 @@ a.waves-effect, a.waves-light {
     cursor: pointer; }
   .navbar.navbar-dark .breadcrumb .nav-item .nav-link,
   .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
-    color: #ccc;
+    color: #fff;
     -webkit-transition: 0.35s;
     -o-transition: 0.35s;
     transition: 0.35s; }
@@ -7007,4 +7007,58 @@ table.table-sm td {
 }
 .hover-out{
   transition: .3s ease-in;
+}
+
+footer.page-footer {
+     margin-top: 20px;
+     padding-top: 20px;
+     color: #fff
+ }
+ 
+ footer.page-footer .container-fluid {
+     width: auto
+ }
+ 
+ footer.page-footer .footer-copyright {
+     overflow: hidden;
+     height: 50px;
+     line-height: 50px;
+     color: rgba(255, 255, 255, .6);
+     background-color: rgba(0, 0, 0, .2);
+     text-align: center;
+     font-size: .9rem
+ }
+ 
+ footer.page-footer a {
+     color: #fff
+ }
+ 
+ footer.page-footer .call-to-action {
+     text-align: center;
+     padding-top: 1.3rem;
+     padding-bottom: .5rem
+ }
+ 
+ footer.page-footer .call-to-action ul li {
+     display: inline-block;
+     padding-right: 10px
+ }
+ 
+ footer.page-footer .social-section ul li {
+     display: inline-block
+ }
+ 
+ footer.page-footer .social-section ul a {
+     margin-left: 0;
+     padding-left: 0
+ }
+ 
+ footer.page-footer ul,
+ ul.instagram-photos {
+     list-style-type: none;
+     padding: 0
+ }
+ 
+footer.page-footer .title {
+    text-transform: uppercase
 }

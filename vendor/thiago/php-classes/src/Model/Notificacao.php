@@ -9,11 +9,8 @@ use Thiago\Mailer;
 class Notificacao extends Model {
 
     public function save() {
-
         $sql = new Sql();
-
         $results = $sql->select("CALL sp_notification_save(:nome_pac, :dt_nasc, :prontuario, :registro, :dt_relato, :dt_oco, :hr_oco, :st_cante, :st_cado, :descricao)", array(
-            
             ":nome_pac"=>$this->getnome_pac(),
             ":dt_nasc"=>$this->getdt_nasc(),
             ":prontuario"=>$this->getprontuario(),
@@ -25,19 +22,13 @@ class Notificacao extends Model {
             ":st_cado"=>$this->getst_cado(),
             ":descricao"=>$this->getdescricao()
         ));
-
         $this->setData($results[0]);
-
     }
 
     public function sendNotification() {
-
         $sql = new Sql();
-
         $results = $sql->select("SELECT * FROM tb_notificacao ORDER BY id_notificacao DESC LIMIT 1");
-
         $data = $results[0];
-       
         $mailer = new Mailer($data["id_notificacao"], $data["nome_pac"], $data["dt_nasc"], $data["prontuario"], $data["registro"], $data["dt_relato"], $data["dt_oco"], $data["hr_oco"], $data["st_cante"], $data["st_cado"], $data["descricao"], "Notificacao Jayme da Fonte", "email", array(
             "id_notificacao"=>$data["id_notificacao"],
             "name_pac"=>$data["nome_pac"],
@@ -51,11 +42,8 @@ class Notificacao extends Model {
             "st_cado"=>$data["st_cado"],
             "descricao"=>$data["descricao"]
         ));
-
         $mailer->send();
-
     }
-
 
 }
 
