@@ -127,14 +127,19 @@
                   <!-- checkbox -->
                   <div class="form-group">
                     <label for="post_active">
-                      <input type="checkbox" class="form-check-input flat-red" id="post_active" name="post_active" value='{function="getUserId()"}' >
+                      {if="$post.post_active == 1"}
+                      <input type="checkbox" class="form-check-input flat-red" id="post_active" name="post_active" value='{function="getUserId()"}' checked>
                       Banner Ativo? 
-                        {if="$post.post_active === 1"}
-                        <span> Sim </span>
-                        {else}
-                        <span> Não </span>
-                        {/if}
+                      <span> Sim </span>
+
+                      {else}
+
+                      <input type="checkbox" class="form-check-input flat-red" id="post_active" name="post_active" value='{function="getUserId()"}'>
+                      Banner Ativo?
+                      <span> Não </span>
+                      {/if}
                     </label>
+                     
                     <br />
                     <label style="display:none" for="id_user">
                       <input  type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='{function="getUserId()"}' required checked>

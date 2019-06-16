@@ -8,15 +8,17 @@ use \Thiago\Model\User;
 /**
  * Get Route List all popups stored
  */
-$app -> get("/popups", function() {
+$app -> get("/admin/popups", function() {
   User::verifyLogin();
   $user = new User();
   $user = User::getFromSession();
-  $popups = Popup::getPopups();
+  $popup = Popup::getPopups();
+  $popups = new Popup();
   $page = new PageAdmin();
   $page -> setTpl("popups", [
-    "popups" => $popups,
-    "user" => $user -> getValues()
+    "user" => $user -> getValues(),
+    "popups" => $popups -> getValues(),
+    "popups" => Popup::checkList($popup)
   ]);
 });
 
@@ -41,6 +43,7 @@ $app -> get("/admin/popups/create", function() {
 $app->post("/admin/popups/create", function () {
   User::getFromSession();
   $popup = new Popup();
+  $_POST["popup_active"] = (isset($_POST["popup_active"])) ? 1 : 0;
   $popup -> setData($_POST);
   $popup -> save();
   if ((int)$_FILES["file"]["size"] > 0) {
@@ -53,7 +56,7 @@ $app->post("/admin/popups/create", function () {
 /**
  * Get Route to delete a popup 
  */
-$app->get("/popups/:id_popup/delete", function ($id_popup) {
+$app->get("/admin/popups/:id_popup/delete", function ($id_popup) {
   User::getFromSession();
   $popup = new Popup();
   $popup -> get((int)$id_popup);

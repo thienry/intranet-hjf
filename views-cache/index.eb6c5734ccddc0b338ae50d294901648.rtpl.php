@@ -1,4 +1,4 @@
-<body id="top">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><body id="top">
   <header>
     <!-- Navbar -->
     <nav
@@ -108,51 +108,51 @@
     >
     <!--
       <ol class="carousel-indicators">
-        {loop="$posts"} 
-          {if="$value.post_active == 1"}
-            {if="$key == $posts.$key"}
+        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?> 
+          <?php if( $value1["post_active"] == 1 ){ ?>
+            <?php if( $key1 == $posts["$key1"] ){ ?>
             <li
               data-target="#carouselExampleIndicators"
-              data-slide-to="{$key}"
+              data-slide-to="<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>"
               class="active"
             ></li>
-            {/if}
-            {if="$key == 1"}          
+            <?php } ?>
+            <?php if( $key1 == 1 ){ ?>          
             <li 
               data-target="#carouselExampleIndicators" 
-              data-slide-to="{$key}"
+              data-slide-to="<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>"
             ></li>
-            {/if}
-            {if="$key == 2"}
+            <?php } ?>
+            <?php if( $key1 == 2 ){ ?>
             <li 
               data-target="#carouselExampleIndicators" 
-              data-slide-to="{$key}"
+              data-slide-to="<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>"
             ></li>
-            {/if}
-          {/if} 
-        {/loop}
+            <?php } ?>
+          <?php } ?> 
+        <?php } ?>
       </ol>
       -->
       
       <div class="carousel-inner">
-        {loop="$posts"} 
-          {if="$value.post_active == 1"}
-            {if="$key == 0"}
+        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?> 
+          <?php if( $value1["post_active"] == 1 ){ ?>
+            <?php if( $key1 == 0 ){ ?>
             <div class="carousel-item active zoom">
-            {else}
+            <?php }else{ ?>
             <div class="carousel-item zoom">
-            {/if}
-              <a href="/blog/{$value.idpost}/{$value.titulo}"
+            <?php } ?>
+              <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
               ><img
                 class="d-block w-100 img-fluid"
-                src="{$value.desphoto}"
-                alt="{$value.titulo}"
+                src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+                alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
                 style="height: 500px;"
               /></a>
             <div class="carousel-caption d-none d-md-block wow fadeIn"></div>
           </div>
-          {/if}
-        {/loop}
+          <?php } ?>
+        <?php } ?>
       </div>
       
       
@@ -396,14 +396,14 @@
 
               <!--Table body-->
               <tbody>
-                {loop="$ramal"}
+                <?php $counter1=-1;  if( isset($ramal) && ( is_array($ramal) || $ramal instanceof Traversable ) && sizeof($ramal) ) foreach( $ramal as $key1 => $value1 ){ $counter1++; ?>
                 <tr>
-                  <th>{$value.setor}</th>
-                  <td>{$value.ramal}</td>
-                  <td>{$value.colaborador}</td>
+                  <th><?php echo htmlspecialchars( $value1["setor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
+                  <td><?php echo htmlspecialchars( $value1["ramal"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                  <td><?php echo htmlspecialchars( $value1["colaborador"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                 </tr>
 
-                {/loop}
+                <?php } ?>
               </tbody>
               <!--Table body-->
             </table>

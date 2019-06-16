@@ -1,4 +1,4 @@
-<!-- Main Sidebar Container -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link" style="text-align: center; color: aliceblue;">
@@ -14,7 +14,7 @@
           <img src="/res/admin/dist/img/user.svg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info" >
-          <a href="#" class="d-block"  style="color: aliceblue;">{function="getUserName()"}</a>
+          <a href="#" class="d-block"  style="color: aliceblue;"><?php echo getUserName(); ?></a>
         </div>
       </div>
 
@@ -30,14 +30,14 @@
             </a>
           </li>
           <!-- if da condicao inadmin-->
-          {if="$user.inadmin == 1"}          
+          <?php if( $user["inadmin"] == 1 ){ ?>          
           <li class="nav-item">
             <a href="/admin/users" class="nav-link"  style="color: aliceblue;">
               <i class="nav-icon fa fa-users"></i>
               <p>Usuarios</p>
             </a>
           </li>
-          {/if}
+          <?php } ?>
           <!-- if da condicao inadmin-->
           <li class="nav-item">
             <a href="/admin/posts" class="nav-link active"  style="color: aliceblue;">
@@ -121,11 +121,11 @@
                   <!-- checkbox -->
                   <div class="form-group">
                     <label for="post_active">
-                      <input type="checkbox" class="form-check-input flat-red" id="post_active" name="post_active" value='{function="getUserId()"}' checked>
+                      <input type="checkbox" class="form-check-input flat-red" id="post_active" name="post_active" value='<?php echo getUserId(); ?>' checked>
                       Banner Ativo?
                     </label>
                     <label for="id_user" style="display:none">
-                      <input type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='{function="getUserId()"}' required checked>
+                      <input type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user" value='<?php echo getUserId(); ?>' required checked>
                       Aceite os termos...
                     </label>
                   </div>

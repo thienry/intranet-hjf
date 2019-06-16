@@ -12,7 +12,7 @@ class Popup extends Model {
    */
   public function getPopups()  {
     $sql = new Sql();
-    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popus DESC LIMIT 16");
+    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popup DESC LIMIT 16");
   }
 
   /**
@@ -20,7 +20,7 @@ class Popup extends Model {
    */
   public function getLastPopup() {
     $sql = new Sql();
-    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popups DESC LIMIT 1");
+    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popup DESC LIMIT 1");
   }
 
   /**
@@ -40,10 +40,10 @@ class Popup extends Model {
    */
   public function get($id_popup) {
     $sql = new Sql();
-    $results = $sql->select("SELECT * FROM tb_popups WHERE ip_popup = : id_popup", array(
-      "id_popup" => $id_popup
+    $results = $sql->select("SELECT * FROM tb_popups WHERE id_popup = :id_popup", array(
+      ":id_popup" => $id_popup
     ));
-    this->setData($results[0]);
+    $this->setData($results[0]);
   }
 
   /**
@@ -51,9 +51,10 @@ class Popup extends Model {
    */
   public function save() {
     $sql = new Sql();
-    $results = $sql->select("CALL sp_popups_save(:id_popup, :text_popup, :id_user)", array(
+    $results = $sql->select("CALL sp_popups_save(:id_popup, :popup_title, :popup_active, :id_user)", array(
       ":id_popup" => $this->getid_popup(),
-      ":text_post" => $this->gettext_post(),
+      ":popup_title" => $this->getpopup_title(),
+      ":popup_active" => $this->getpopup_active(),
       ":id_user" => $this->getid_user()
     ));
     $this->setData($results[0]);
@@ -78,10 +79,10 @@ class Popup extends Model {
       . DIRECTORY_SEPARATOR . "site"
       . DIRECTORY_SEPARATOR . "img"
       . DIRECTORY_SEPARATOR . "popups"
-      . DIRECTORY_SEPARATOR . $this -> getidpost() . ".jpg")) {
-      $url = "/res/site/img/popups/" . $this -> getidpost() . ".jpg";
+      . DIRECTORY_SEPARATOR . $this -> getid_popup() . ".jpg")) {
+      $url = "/res/site/img/popups/" . $this -> getid_popup() . ".jpg";
     } else {
-      $url = "/res/site/img/popup.jpg";
+      $url = "/res/site/img/popups/popup.jpg";
     }
     return $this->setdesphoto($url);
   }

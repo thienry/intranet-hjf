@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a
     href="/admin"
@@ -28,7 +28,7 @@
       </div>
       <div class="info">
         <a href="#" class="d-block" style="color: aliceblue;"
-          >{function="getUserName()"}</a
+          ><?php echo getUserName(); ?></a
         >
       </div>
     </div>
@@ -50,14 +50,14 @@
           </a>
         </li>
         <!-- if da condicao inadmin-->
-        {if="$user.inadmin == 1"}
+        <?php if( $user["inadmin"] == 1 ){ ?>
         <li class="nav-item">
           <a href="/admin/users" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-users"></i>
             <p>Usuarios</p>
           </a>
         </li>
-        {/if}
+        <?php } ?>
 
         <!-- if da condicao inadmin-->
         <li class="nav-item">
@@ -127,25 +127,25 @@
             >Cadastrar Popup</a
           >
         </div>
-        {loop="$popups"}
+        <?php $counter1=-1;  if( isset($popups) && ( is_array($popups) || $popups instanceof Traversable ) && sizeof($popups) ) foreach( $popups as $key1 => $value1 ){ $counter1++; ?>
         <div class="col-lg-4 col-md-4 col-sm-6">
           <div class="card card-primary card-outline">
             <img
               class="card-img-top img-fluid"
               src=""
-              alt="{$value.popup_title}"
+              alt="<?php echo htmlspecialchars( $value1["popup_title"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
               style="height: 200px;"
             />
             <div class="card-body">
               <h5 class="card-title mb-2">
-                <strong class="text-muted">Título: {$value.popup_title}</strong>
+                <strong class="text-muted">Título: <?php echo htmlspecialchars( $value1["popup_title"], ENT_COMPAT, 'UTF-8', FALSE ); ?></strong>
               </h5>
               <p class="card-title mb-2">
                 <strong>Popup Ativo: </strong>
-                {if="$value.popup_active == 1"} Sim {else} Não {/if}
+                <?php if( $value1["popup_active"] == 1 ){ ?> Sim <?php }else{ ?> Não <?php } ?>
               </p>
               <a
-                href="/admin/popups/{$value.id_popup}/delete"
+                href="/admin/popups/<?php echo htmlspecialchars( $value1["id_popup"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete"
                 onclick="return confirm('Deseja realmente excluir este registro?')"
                 class="btn btn-danger btn-block"
               >
@@ -154,7 +154,7 @@
             </div>
           </div>
         </div>
-        {/loop}
+        <?php } ?>
       </div>
       <!-- /.row -->
     </div>
