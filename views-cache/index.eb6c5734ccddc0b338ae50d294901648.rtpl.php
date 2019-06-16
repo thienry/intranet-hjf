@@ -1,4 +1,4 @@
-<body id="top">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><body id="top">
   <header>
     <!-- Navbar -->
     <nav
@@ -106,34 +106,34 @@
       data-ride="carousel"
     >
       <div class="carousel-inner">
-        {loop="$posts"} 
-          {if="$value.post_active == $displayBannerControl"}
-            {if="$classActiveControl == 2"}
+        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?> 
+          <?php if( $value1["post_active"] == $displayBannerControl ){ ?>
+            <?php if( $classActiveControl == 2 ){ ?>
               <div class="carousel-item active zoom">
-                <a href="/blog/{$value.idpost}/{$value.titulo}"
+                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
                   ><img
                     class="d-block w-100 img-fluid"
-                    src="{$value.desphoto}"
-                    alt="{$value.titulo}"
+                    src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+                    alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
                     style="height: 500px;"
                 /></a>
               </div>
-              {$classActiveControl = 1} 
-            {else}
+              <?php $classActiveControl = 1; ?> 
+            <?php }else{ ?>
               <div class="carousel-item zoom">
-                <a href="/blog/{$value.idpost}/{$value.titulo}"
+                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
                   ><img
                     class="d-block w-100 img-fluid"
-                    src="{$value.desphoto}"
-                    alt="{$value.titulo}"
+                    src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+                    alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
                     style="height: 500px;"
                 /></a>
               </div>
-            {/if}
-          {else}
-            {$displayBannerControl = 1}
-          {/if}
-        {/loop}
+            <?php } ?>
+          <?php }else{ ?>
+            <?php $displayBannerControl = 1; ?>
+          <?php } ?>
+        <?php } ?>
       </div>
 
       <a
@@ -395,14 +395,14 @@
 
               <!--Table body-->
               <tbody>
-                {loop="$ramal"}
+                <?php $counter1=-1;  if( isset($ramal) && ( is_array($ramal) || $ramal instanceof Traversable ) && sizeof($ramal) ) foreach( $ramal as $key1 => $value1 ){ $counter1++; ?>
                 <tr>
-                  <th>{$value.setor}</th>
-                  <td>{$value.ramal}</td>
-                  <td>{$value.colaborador}</td>
+                  <th><?php echo htmlspecialchars( $value1["setor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></th>
+                  <td><?php echo htmlspecialchars( $value1["ramal"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                  <td><?php echo htmlspecialchars( $value1["colaborador"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                 </tr>
 
-                {/loop}
+                <?php } ?>
               </tbody>
               <!--Table body-->
             </table>

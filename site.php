@@ -13,8 +13,10 @@ $app->get('/', function() {
 	$posts = Post::listAllLimit2();
 	$page = new Page();
 	$page->setTpl("index", array(
-		"ramal"=>$ramal,
-		"posts"=>Post::checkList($posts)
+		"ramal" => $ramal,
+		"posts" => Post::checkList($posts),
+		"displayBannerControl" => 1,
+		"classActiveControl" => 2,
 	));
 });
 
