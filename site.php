@@ -4,6 +4,7 @@ use \Thiago\Page;
 use \Thiago\Model\Ramal;
 use \Thiago\DB\Sql;
 use \Thiago\Model\Post;
+use \Thiago\Model\Popup;
 use \Thiago\Model\Notificacao;
 use \Thiago\PageEvents;
 use \Thiago\PageEvent;
@@ -11,11 +12,14 @@ use \Thiago\PageEvent;
 $app->get('/', function() {
 	$ramal = Ramal::listAll();
 	$posts = Post::listAllLimit2();
+	$popups = Popup::getLast2Popups();
 	$page = new Page();
 	$page->setTpl("index", array(
 		"ramal" => $ramal,
 		"posts" => Post::checkList($posts),
+		"popups" => Popup::checkList($popups),
 		"displayBannerControl" => 1,
+		"displayPopupControl" => 1,
 		"classActiveControl" => 2,
 	));
 });

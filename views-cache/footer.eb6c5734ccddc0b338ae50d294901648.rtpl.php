@@ -155,8 +155,26 @@
         selector: ".project__card"
       });
 
-    });
+      $("#myModal").modal("show");
+      $("#btn-close").click(function () {
+          $("#myModal").modal("hide");
+          $('#0').modal("show");
+      });
+      
+      $("#top").removeAttr("style");
+      $("#btn-0").click(function () {
+        $("#0").modal("hide");
+        $('#1').modal("show");
+      });
 
+      $("#top").removeAttr("style");
+ 
+      $("#btn-1").click(function () {
+          $('#1').modal("hide");
+          $("#top").removeAttr("style");
+      });
+
+    });
    </script>
 
    <script type="text/javascript">

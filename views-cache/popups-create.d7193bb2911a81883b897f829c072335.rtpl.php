@@ -1,4 +1,4 @@
-<!-- Main Sidebar Container -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="/admin" class="brand-link" style="text-align: center; color: aliceblue;">
@@ -14,7 +14,7 @@
         <img src="/res/admin/dist/img/user.svg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block" style="color: aliceblue;">{function="getUserName()"}</a>
+        <a href="#" class="d-block" style="color: aliceblue;"><?php echo getUserName(); ?></a>
       </div>
     </div>
 
@@ -30,14 +30,14 @@
           </a>
         </li>
         <!-- if da condicao inadmin-->
-        {if="$user.inadmin == 1"}
+        <?php if( $user["inadmin"] == 1 ){ ?>
         <li class="nav-item">
           <a href="/admin/users" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-users"></i>
             <p>Usuarios</p>
           </a>
         </li>
-        {/if}
+        <?php } ?>
         <!-- if da condicao inadmin-->
         <li class="nav-item">
           <a href="/admin/posts" class="nav-link " style="color: aliceblue;">
@@ -114,13 +114,13 @@
                 <div class="form-group">
                   <label style="display:none" for="popup_active">
                     <input type="checkbox" class="form-check-input flat-red" id="popup_active" name="popup_active"
-                      value='{function="getUserId()"}' required checked>
+                      value='<?php echo getUserId(); ?>' required checked>
                     Popup Ativo?
                   </label>
                   <br>
                   <label style="display:none" for="id_user">
                     <input type="checkbox" class="form-check-input flat-red" id="id_user" name="id_user"
-                      value='{function="getUserId()"}' required checked>
+                      value='<?php echo getUserId(); ?>' required checked>
                     Aceite os termos...
                   </label>
                 </div>

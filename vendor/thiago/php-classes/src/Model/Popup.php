@@ -10,24 +10,24 @@ class Popup extends Model {
   /**
    * Function that return all the images_popups stored in database.
    */
-  public function getPopups()  {
+  public static function getPopups()  {
     $sql = new Sql();
-    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popup DESC LIMIT 16");
+    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popup DESC LIMIT 6");
   }
 
   /**
    * Function that return the last image_popup stored in database.
    */
-  public function getLastPopup() {
+  public static function getLast2Popups() {
     $sql = new Sql();
-    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popup DESC LIMIT 1");
+    return $sql->select("SELECT * FROM tb_popups ORDER BY id_popup DESC LIMIT 2");
   }
 
   /**
    *  
    */
   public static function checkList($list) {
-    foreach ($list as $row) {
+    foreach ($list as &$row) {
       $p = new Popup();
       $p->setData($row);
       $row = $p->getValues();
@@ -79,10 +79,11 @@ class Popup extends Model {
       . DIRECTORY_SEPARATOR . "site"
       . DIRECTORY_SEPARATOR . "img"
       . DIRECTORY_SEPARATOR . "popups"
-      . DIRECTORY_SEPARATOR . $this -> getid_popup() . ".jpg")) {
-      $url = "/res/site/img/popups/" . $this -> getid_popup() . ".jpg";
+      . DIRECTORY_SEPARATOR . $this -> getid_popup() . ".jpg")
+      ) {
+      $url = "/res/site/img/popups/".$this -> getid_popup().".jpg";
     } else {
-      $url = "/res/site/img/popups/popup.jpg";
+      $url = "/res/site/img/popup.jpg";
     }
     return $this->setdesphoto($url);
   }

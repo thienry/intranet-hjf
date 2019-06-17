@@ -1,7 +1,6 @@
 <?php
 
 use \Thiago\PageAdmin;
-use \Thiago\DB\Sql;
 use \Thiago\Model\Popup;
 use \Thiago\Model\User;
 
@@ -41,7 +40,7 @@ $app -> get("/admin/popups/create", function() {
  * Post Route form to create a new popup
  */
 $app->post("/admin/popups/create", function () {
-  User::getFromSession();
+  User::verifyLogin();
   $popup = new Popup();
   $_POST["popup_active"] = (isset($_POST["popup_active"])) ? 1 : 0;
   $popup -> setData($_POST);
