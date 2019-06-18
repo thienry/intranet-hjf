@@ -315,6 +315,9 @@
               <li>
                 <a href="/notificacao">Notificação</a>
               </li>
+              <li>
+                <a href="/convenants-list">Lista de Convênios</a>
+              </li>
             </ul>
           </div>
           <!--/.Second column-->

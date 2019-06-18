@@ -1,18 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a
-    href="/admin"
-    class="brand-link"
-    style="text-align: center; color: aliceblue;"
-  >
-    <img
-      src="/res/site/img/hjf.png"
-      alt="Blog HJF"
-      class="brand-image img-circle"
-    />
-    <span class="brand-text font-weight-light" style="padding-right: 30px;"
-      >Jayme da Fonte</span
-    >
+  <a href="/admin" class="brand-link" style="text-align: center; color: aliceblue;">
+    <img src="/res/site/img/hjf.png" alt="Blog HJF" class="brand-image img-circle" />
+    <span class="brand-text font-weight-light" style="padding-right: 30px;">Jayme da Fonte</span>
   </a>
 
   <!-- Sidebar -->
@@ -20,27 +10,16 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img
-          src="/res/admin/dist/img/user.svg"
-          class="img-circle elevation-2"
-          alt="User Image"
-        />
+        <img src="/res/admin/dist/img/user.svg" class="img-circle elevation-2" alt="User Image" />
       </div>
       <div class="info">
-        <a href="#" class="d-block" style="color: aliceblue;"
-          >{function="getUserName()"}</a
-        >
+        <a href="#" class="d-block" style="color: aliceblue;">{function="getUserName()"}</a>
       </div>
     </div>
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
-      <ul
-        class="nav nav-pills nav-sidebar flex-column"
-        data-widget="treeview"
-        role="menu"
-        data-accordion="false"
-      >
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
               with font-awesome or any other icon font library -->
         <li class="nav-item">
@@ -54,7 +33,7 @@
         <li class="nav-item">
           <a href="/admin/users" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-users"></i>
-            <p>Usuários</p>
+            <p>Usuarios</p>
           </a>
         </li>
         {/if}
@@ -67,11 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a
-            href="/admin/popups"
-            class="nav-link active"
-            style="color: aliceblue;"
-          >
+          <a href="/admin/popups" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-picture-o"></i>
             <p>Popups</p>
           </a>
@@ -83,7 +58,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/admin/convenants" class="nav-link" style="color: aliceblue;">
+          <a href="/admin/convenants" class="nav-link active" style="color: aliceblue;">
             <i class="nav-icon fa fa-heartbeat"></i>
             <p>Convênios</p>
           </a>
@@ -101,14 +76,14 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Lista de Popups</h1>
+          <h1 class="m-0 text-dark">Lista de Convênios</h1>
         </div>
         <!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-              <li class="breadcrumb-item active">Popups</li>
+              <li class="breadcrumb-item active">Convênios</li>
             </ol>
           </ol>
         </div>
@@ -121,47 +96,53 @@
   <!-- /.content-header -->
 
   <!-- Main content -->
-
-  <div class="content">
-    <div class="container-fluid">
+    <section class="content">
       <div class="row">
         <div class="col-12">
-          <a
-            href="/admin/popups/create"
-            class="btn btn-success pull-right"
-            style="margin-bottom: 10px;"
-            >Cadastrar Popup</a
-          >
-        </div>
-        {loop="$popups"}
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          <div class="card card-primary card-outline">
-            <img
-              class="card-img-top img-fluid"
-              src="{$value.desphoto}"
-              alt="{$value.popup_title}"
-              style="height: 200px;"
-            />
-            <div class="card-body">
-              <h5 class="card-title mb-2">
-                <strong class="">{$value.popup_title}</strong>
-              </h5>
-              <a
-                href="/admin/popups/{$value.id_popup}/delete"
-                onclick="return confirm('Deseja realmente excluir este registro?')"
-                class="btn btn-danger btn-block"
-              >
-                <i class="fa fa-trash"></i>Excluir
-              </a>
+          <div class="card">
+            <div class="box-header">
+              <a href="/admin/convenants/create" class="btn btn-success pull-right"
+                style="margin-right: 20px; margin-top: 10px;">Cadastrar Convênio</a>
             </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="users" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Convênio</th>
+                    <th>Call Center</th>
+                    <th>Site</th>
+                    <th style="width: 140px">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {loop="$convenants"}
+                  <tr>
+                    <td>{$value.name_convenant}</td>
+                    <td>{$value.call_center}</td>
+                    <td>
+                      <a href="{$value.site}" target="_blank">{$value.site}</a>
+                    </td>
+                    <td style="width: 200px">
+                      <a href="/admin/convenants/{$value.id_convenant}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i>
+                        Editar</a>
+                      <a href="/admin/convenants/{$value.id_convenant}/delete"
+                        onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm"><i
+                          class="fa fa-trash"></i> Excluir</a>
+                    </td>
+                  </tr>
+                  {/loop}
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
           </div>
+          <!-- /.card -->
         </div>
-        {/loop}
+        <!-- /.col -->
       </div>
       <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-  </div>
+    </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

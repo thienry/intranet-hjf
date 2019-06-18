@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Blog HJF</title>
+  <title>Admin Intranet | Jayme da Fonte</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +27,7 @@
   <div class="card-body login-card-body">
     
     <div class="lockscreen-logo">
-    <b>Blog </b> HJF
+    <b>Admin </b> Intranet
     </div>
     <!-- User name -->
     

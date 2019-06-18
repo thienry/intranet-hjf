@@ -43,9 +43,9 @@
         data-accordion="false"
       >
         <!-- Add icons to the links using the .nav-icon class
-              with font-awesome or any other icon font library -->
+                with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <a href="/admin" class="nav-link active" style="color: aliceblue;">
+          <a href="/admin" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-dashboard"></i>
             <p>Dashboard</p>
           </a>
@@ -53,13 +53,12 @@
         <!-- if da condicao inadmin-->
         {if="$user.inadmin == 1"}
         <li class="nav-item">
-          <a href="/admin/users" class="nav-link" style="color: aliceblue;">
+          <a href="/admin/users" class="nav-link " style="color: aliceblue;">
             <i class="nav-icon fa fa-users"></i>
             <p>Usuários</p>
           </a>
         </li>
         {/if}
-
         <!-- if da condicao inadmin-->
         <li class="nav-item">
           <a href="/admin/posts" class="nav-link" style="color: aliceblue;">
@@ -80,7 +79,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/admin/convenants" class="nav-link" style="color: aliceblue;">
+          <a
+            href="/admin/convenants"
+            class="nav-link active"
+            style="color: aliceblue;"
+          >
             <i class="nav-icon fa fa-heartbeat"></i>
             <p>Convênios</p>
           </a>
@@ -95,93 +98,105 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
-  <div class="content-header">
+  <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Dashboard</h1>
+          <h1>Lista de Convênios</h1>
         </div>
-        <!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item">
+              <a href="/admin/convenants">Convênios</a>
+            </li>
+            <li class="breadcrumb-item active">Atualizar Convênios</li>
           </ol>
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
-  </div>
-  <!-- /.content-header -->
+  </section>
 
   <!-- Main content -->
-  <div class="content">
+  <section class="content">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-10">
-          <!-- Content -->
-          <div class="jumbotron bg-primary">
-            <h1 class="display-4">
-              Painel Admin do sistema de postagens do hospital Jayme da Fonte
-            </h1>
-            <p class="lead">
-              Esse sistema foi concebido para que os funcionarios responsaveis
-              pela parte de marketing do hospital possa fazer todo o
-              gerenciamento de divulgacao interno do hospital.
-            </p>
-            <hr class="my-4" />
-            <p>Cadastrando postagens para serem expostas na intranet.</p>
-            <a class="btn btn-info btn-lg" href="/blog" role="button"
-              >Blog HJF</a
+        <!-- left column -->
+        <div class="col">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Atualizar Convêno</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form
+              role="form"
+              action="/admin/convenants/{$convenant.id_convenant}"
+              method="post"
             >
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="convenant">Convênio</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="convenant"
+                    name="convenant"
+                    placeholder="Digite o Convênio"
+                    value="{$convenant.name_convenant}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="call_center">Número do Call Center</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="call_center"
+                    name="call_center"
+                    placeholder="Digite o Número do Call Center"
+                    value="{$convenant.call_center}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="site">Site</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="site"
+                    name="site"
+                    placeholder="Digite o site"
+                    value="{$convenant.site}"
+                  />
+
+                  <label style="display:none" for="id_user">
+                    <input
+                      type="checkbox"
+                      class="form-check-input flat-red"
+                      id="id_user"
+                      name="id_user"
+                      value='{function="getUserId()"}'
+                      required
+                      checked
+                    />
+                  </label>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
           </div>
+          <!-- /.card -->
         </div>
-        <div class="col-md-2">
-          <!-- small box -->
-          <div class="small-box bg-success">
-            <div class="inner">
-              <h3><span class="counter">{function="totalPosts()"}</span></h3>
-              <p>Postagens <small>no total</small></p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="/admin/posts" class="small-box-footer"
-              >Mais detalhes <i class="fa fa-arrow-circle-right"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-      <hr class="mb-5" />
-      <h4 class="mt-4 mb-2">Ultimas Postagens</h4>
-      <div class="row">
-        {loop="$posts"}
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card card-primary card-outline">
-            <img
-              class="card-img-top img-fluid"
-              src="{$value.desphoto}"
-              alt="{$value.titulo}"
-              style="height: 200px;"
-            />
-            <div class="card-body">
-              <h5 class="card-title"><strong>{$value.titulo}</strong></h5>
-              <p class="card-text">{function="cortaStr($value.texto)"} ...</p>
-              <a
-                href="/blog/{$value.idpost}/{$value.titulo}"
-                class="btn btn-primary"
-                >Ver Postagem</a
-              >
-            </div>
-          </div>
-        </div>
-        {/loop}
+        <!--/.col  -->
       </div>
       <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
-  </div>
+  </section>
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

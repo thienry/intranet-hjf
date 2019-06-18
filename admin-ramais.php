@@ -8,8 +8,8 @@ $app->get("/admin/ramais", function() {
 	User::verifyLogin();
 	$user = new User();
 	$user = User::getFromSession();
-    $ramais = Ramal::listAll();
-    $page = new PageAdmin();
+  $ramais = Ramal::listAll();
+  $page = new PageAdmin();
 	$page->setTpl("ramais", array(
 		"ramais"=>$ramais,
 		"user"=>$user->getValues()
@@ -61,7 +61,7 @@ $app->post("/admin/ramais/:id_agenda", function($idagenda) {
 	User::verifyLogin();
 	$ramal = new Ramal();
 	$ramal->get((int)$idagenda);
-    $ramal->setData($_POST);
+  $ramal->setData($_POST);
 	$ramal->update();
 	header("Location: /admin/ramais");
 	exit;

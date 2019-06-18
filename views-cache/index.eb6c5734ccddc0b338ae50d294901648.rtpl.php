@@ -1,51 +1,78 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><body id="top">
   <header>
-  
-    <?php $counter1=-1;  if( isset($popups) && ( is_array($popups) || $popups instanceof Traversable ) && sizeof($popups) ) foreach( $popups as $key1 => $value1 ){ $counter1++; ?>
-      <?php if( $value1["popup_active"] == $displayPopupControl ){ ?>
-        <div class="modal fade" id="<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <!-- Change class .modal-sm to change the size of the modal -->
-            <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title w-100" id="myModalLabel"><?php echo htmlspecialchars( $value1["popup_title"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
-                <button type="button" id="btn-<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="popups" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php }else{ ?>
-        <?php $displayPopupControl = 1; ?>
-      <?php } ?>
-    <?php } ?>
-  
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <?php $counter1=-1;  if( isset($popups) && ( is_array($popups) || $popups instanceof Traversable ) && sizeof($popups) ) foreach( $popups as $key1 => $value1 ){ $counter1++; ?> <?php if( $value1["popup_active"] == $displayPopupControl ){ ?>
+    <div
+      class="modal fade"
+      id="<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
       <!-- Change class .modal-sm to change the size of the modal -->
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title w-100" id="myModalLabel">Manuais e Vídeos do Prontuário Eletrônico</h2>
-            <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
+            <h2 class="modal-title w-100" id="myModalLabel">
+              <?php echo htmlspecialchars( $value1["popup_title"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+            </h2>
+            <button
+              type="button"
+              id="btn-<?php echo htmlspecialchars( $key1, ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="popups" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php }else{ ?> <?php $displayPopupControl = 1; ?> <?php } ?> <?php } ?>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <!-- Change class .modal-sm to change the size of the modal -->
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title w-100" id="myModalLabel">
+              Manuais e Vídeos do Prontuário Eletrônico
+            </h2>
+            <button
+              type="button"
+              id="btn-close"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <a href="/docs">
-              <img src="/res/site/img/intranet-docs.jpg" alt="popups" class="img-fluid">
+              <img
+                src="/res/site/img/intranet-docs.jpg"
+                alt="popups"
+                class="img-fluid"
+              />
             </a>
           </div>
         </div>
       </div>
     </div>
     <!-- End Modal-->
-
-    
 
     <!-- Navbar -->
     <nav
@@ -125,6 +152,9 @@
                   target="_blank"
                   >Cerpe</a
                 >
+                <a class="dropdown-item" href="/convenants-list"
+                  >Lista de Convênios</a
+                >
               </div>
             </li>
           </ul>
@@ -153,34 +183,28 @@
       data-ride="carousel"
     >
       <div class="carousel-inner">
-        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?> 
-          <?php if( $value1["post_active"] == $displayBannerControl ){ ?>
-            <?php if( $classActiveControl == 2 ){ ?>
-              <div class="carousel-item active zoom">
-                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                  ><img
-                    class="d-block w-100 img-fluid"
-                    src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                    alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                    style="height: 500px;"
-                /></a>
-              </div>
-              <?php $classActiveControl = 1; ?> 
-            <?php }else{ ?>
-              <div class="carousel-item zoom">
-                <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                  ><img
-                    class="d-block w-100 img-fluid"
-                    src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                    alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-                    style="height: 500px;"
-                /></a>
-              </div>
-            <?php } ?>
-          <?php }else{ ?>
-            <?php $displayBannerControl = 1; ?>
-          <?php } ?>
-        <?php } ?>
+        <?php $counter1=-1;  if( isset($posts) && ( is_array($posts) || $posts instanceof Traversable ) && sizeof($posts) ) foreach( $posts as $key1 => $value1 ){ $counter1++; ?> <?php if( $value1["post_active"] == $displayBannerControl ){ ?>
+        <?php if( $classActiveControl == 2 ){ ?>
+        <div class="carousel-item active zoom">
+          <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+            ><img
+              class="d-block w-100 img-fluid"
+              src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+              alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+              style="height: 500px;"
+          /></a>
+        </div>
+        <?php $classActiveControl = 1; ?> <?php }else{ ?>
+        <div class="carousel-item zoom">
+          <a href="/blog/<?php echo htmlspecialchars( $value1["idpost"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+            ><img
+              class="d-block w-100 img-fluid"
+              src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+              alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
+              style="height: 500px;"
+          /></a>
+        </div>
+        <?php } ?> <?php }else{ ?> <?php $displayBannerControl = 1; ?> <?php } ?> <?php } ?>
       </div>
 
       <a

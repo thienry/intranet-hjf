@@ -1,51 +1,78 @@
 <body id="top">
   <header>
-  
-    {loop="$popups"}
-      {if="$value.popup_active == $displayPopupControl"}
-        <div class="modal fade" id="{$key}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <!-- Change class .modal-sm to change the size of the modal -->
-            <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title w-100" id="myModalLabel">{$value.popup_title}</h2>
-                <button type="button" id="btn-{$key}" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="{$value.desphoto}" alt="popups" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-      {else}
-        {$displayPopupControl = 1}
-      {/if}
-    {/loop}
-  
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    {loop="$popups"} {if="$value.popup_active == $displayPopupControl"}
+    <div
+      class="modal fade"
+      id="{$key}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
       <!-- Change class .modal-sm to change the size of the modal -->
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title w-100" id="myModalLabel">Manuais e Vídeos do Prontuário Eletrônico</h2>
-            <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
+            <h2 class="modal-title w-100" id="myModalLabel">
+              {$value.popup_title}
+            </h2>
+            <button
+              type="button"
+              id="btn-{$key}"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="{$value.desphoto}" alt="popups" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+    {else} {$displayPopupControl = 1} {/if} {/loop}
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <!-- Change class .modal-sm to change the size of the modal -->
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title w-100" id="myModalLabel">
+              Manuais e Vídeos do Prontuário Eletrônico
+            </h2>
+            <button
+              type="button"
+              id="btn-close"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <a href="/docs">
-              <img src="/res/site/img/intranet-docs.jpg" alt="popups" class="img-fluid">
+              <img
+                src="/res/site/img/intranet-docs.jpg"
+                alt="popups"
+                class="img-fluid"
+              />
             </a>
           </div>
         </div>
       </div>
     </div>
     <!-- End Modal-->
-
-    
 
     <!-- Navbar -->
     <nav
@@ -125,6 +152,9 @@
                   target="_blank"
                   >Cerpe</a
                 >
+                <a class="dropdown-item" href="/convenants-list"
+                  >Lista de Convênios</a
+                >
               </div>
             </li>
           </ul>
@@ -153,34 +183,28 @@
       data-ride="carousel"
     >
       <div class="carousel-inner">
-        {loop="$posts"} 
-          {if="$value.post_active == $displayBannerControl"}
-            {if="$classActiveControl == 2"}
-              <div class="carousel-item active zoom">
-                <a href="/blog/{$value.idpost}/{$value.titulo}"
-                  ><img
-                    class="d-block w-100 img-fluid"
-                    src="{$value.desphoto}"
-                    alt="{$value.titulo}"
-                    style="height: 500px;"
-                /></a>
-              </div>
-              {$classActiveControl = 1} 
-            {else}
-              <div class="carousel-item zoom">
-                <a href="/blog/{$value.idpost}/{$value.titulo}"
-                  ><img
-                    class="d-block w-100 img-fluid"
-                    src="{$value.desphoto}"
-                    alt="{$value.titulo}"
-                    style="height: 500px;"
-                /></a>
-              </div>
-            {/if}
-          {else}
-            {$displayBannerControl = 1}
-          {/if}
-        {/loop}
+        {loop="$posts"} {if="$value.post_active == $displayBannerControl"}
+        {if="$classActiveControl == 2"}
+        <div class="carousel-item active zoom">
+          <a href="/blog/{$value.idpost}/{$value.titulo}"
+            ><img
+              class="d-block w-100 img-fluid"
+              src="{$value.desphoto}"
+              alt="{$value.titulo}"
+              style="height: 500px;"
+          /></a>
+        </div>
+        {$classActiveControl = 1} {else}
+        <div class="carousel-item zoom">
+          <a href="/blog/{$value.idpost}/{$value.titulo}"
+            ><img
+              class="d-block w-100 img-fluid"
+              src="{$value.desphoto}"
+              alt="{$value.titulo}"
+              style="height: 500px;"
+          /></a>
+        </div>
+        {/if} {else} {$displayBannerControl = 1} {/if} {/loop}
       </div>
 
       <a

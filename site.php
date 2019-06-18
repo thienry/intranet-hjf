@@ -6,6 +6,7 @@ use \Thiago\DB\Sql;
 use \Thiago\Model\Post;
 use \Thiago\Model\Popup;
 use \Thiago\Model\Notificacao;
+use Thiago\Model\Convenant;
 use \Thiago\PageEvents;
 use \Thiago\PageEvent;
 
@@ -91,6 +92,18 @@ $app->get("/docs", function() {
 		"footer"=>false
 	]);
 	$page->setTpl("docs");
+});
+
+$app->get("/convenants-list", function () {
+	$convenant = Convenant::listAll();
+
+	$page = new Page([
+		"header" => false,
+		"footer" => false
+	]);
+	$page->setTpl("convenants-list", [
+		"convenant" => $convenant
+	]);
 });
 
 $app -> get("/events", function() {

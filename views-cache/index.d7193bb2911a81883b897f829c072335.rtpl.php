@@ -55,7 +55,7 @@
         <li class="nav-item">
           <a href="/admin/users" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-users"></i>
-            <p>Usuarios</p>
+            <p>Usuários</p>
           </a>
         </li>
         <?php } ?>
@@ -77,6 +77,12 @@
           <a href="/admin/ramais" class="nav-link" style="color: aliceblue;">
             <i class="nav-icon fa fa-phone"></i>
             <p>Ramais</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/admin/convenants" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-heartbeat"></i>
+            <p>Convênios</p>
           </a>
         </li>
       </ul>

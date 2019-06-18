@@ -1,4 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -15,7 +15,9 @@
   <!-- Your custom styles (optional) -->
   <link href="/res/site/css/style2.css" rel="stylesheet" />
   <link href="/res/site/css/mdbnew.css" rel="stylesheet" />
+  <link href="/res/site/css/style.css" rel="stylesheet" />
   <link href="/res/site/css/mdb.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/res/admin/plugins/datatables/dataTables.bootstrap4.min.css" />
   <link rel="shortcut icon" href="/res/site/img/favicon.ico" type="image/x-icon" />
 
   <!-- Template styles -->
@@ -84,6 +86,9 @@
               <a class="nav-link" href="/events">Eventos</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/notificacao">Notificação</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/docs">Docs</a>
             </li>
             <li class="nav-item dropdown">
@@ -97,11 +102,10 @@
                 <a class="dropdown-item" href="//webmail" target="_blank">Webmail</a>
                 <a class="dropdown-item" href="//ebem.neovero.com" target="_blank">Ebem</a>
                 <a class="dropdown-item" href="//sislu.dasa.com.br" target="_blank">Cerpe</a>
+                <a class="dropdown-item" href="/convenants-list" >Lista de Convênios</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/notificacao">Notificação</a>
-            </li>
+
           </ul>
 
           <!-- Right -->
@@ -121,162 +125,49 @@
   <!--Main Navigation-->
 
   <!--- Main Content -->
-    <main>
-    
-      <!--Main layout-->
-      <div class="container">
-    
-        <h1 class="h1 text-center  mt-5">Eventos</h1>
-    
-        <br>
-
-        <div class="row">
-          <!--First columnn-->
-          <div class="col-lg-4 col-md-6 mb-3 mt-3">
-            <!--Card-->
-            <div class="card mb-r wow fadeIn" data-wow-delay="0.2s">
-        
-              <!--Card image-->
-              <a href="/event/homenagem-liga-academica-transplante-figado" style="text-decoration: none;">
-                <img class="img-fluid evento" style="width: 400px; height: 250px;" src="/res/site/img/eventos/eventos-id/homenagem-liga-academica-transplante-figado-5.jpg" alt="Homenagem aos 10 anos da Liga Acadêmica de Transplante de Fígado">
-              </a>
-                <div class="card-body">
-                  <!--Title-->
-                  <h4 class="card-title">
-                    <strong>Homenagem aos 10 anos da Liga Acadêmica de Transplante de Fígado</strong>
-                  </h4>
-                  <!--Text-->
-                  <a href="/event/homenagem-liga-academica-transplante-figado" class="btn btn-danger btn-md">Ver Evento</a>
-                </div>
-              
-            </div>
-            <!--/.Card-->
-          </div>
-          <!--First columnn-->
-        
-          <!--Second columnn-->
-          <div class="col-lg-4 col-md-6 mb-3 mt-3">
-            <!--Card-->
-            <div class="card mb-r wow fadeIn" data-wow-delay="0.4s">
-        
-              <!--Card image-->
-              <a href="/event/bencao-comemoracao-transplantes">
-                <img class="img-fluid evento" style="width: 400px; height: 250px;" src="/res/site/img/eventos/eventos-id/bencao-comemoracao-transplantes-1.jpg" alt="Benção em comemoração pelos 1.000 transplantes">
-              </a>
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">
-                  <strong>Benção em comemoração pelos 1.000 transplantes</strong>
-                </h4>
-                <!--Text-->
-                <a href="/event/bencao-comemoracao-transplantes" class="btn btn-danger btn-md">Ver Evento</a>
-              </div>
-        
-            </div>
-            <!--/.Card-->
-        
-          </div>
-          <!--Second columnn-->
-        
-          <!--Third columnn-->
-          <div class="col-lg-4 col-md-6 mb-3 mt-3">
-            <!--Card-->
-            <div class="card mb-r wow fadeIn" data-wow-delay="0.2s">
-          
-              <!--Card image--> 
-              <a href="/event/semana-enfermagem">
-                <img class="img-fluid evento" style="width: 400px; height: 250px;" src="/res/site/img/eventos/semana-enfermagem.jpg" alt="Semana da Enfermagem">
-              </a>
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">
-                  <strong>Semana da Enfermagem</strong>
-                </h4>
-                <!--Text-->
-                <a href="/event/semana-enfermagem" class="btn btn-danger btn-md">Ver Evento</a>
-              </div>
-          
-            </div>
-            <!--/.Card-->
-          </div>
-          <!--Third columnn-->
-        
+  <div class="container">
+    <section class="mt-5 pt-5 mb-5 wow fadeIn">
+      <div class="tabelaRamal">
+        <div class="infoRamal">
+          <!-- Main heading -->
+          <h1 class="h1 mb-3" style="text-align: center">Lista de Convênios</h1>
         </div>
-
-        <!--Second row-->
-        <div class="row ">
-
-          <div class="col-lg-4 col-md-6 mb-3 mt-3">
-            <!--Card-->
-            <div class="card mb-r wow fadeIn" data-wow-delay="0.4s">
-    
-              <!--Card image-->
-              <a href="/event/dia-das-maes">
-                <img class="img-fluid evento" style="width: 400px; height: 250px;" src="/res/site/img/eventos/dia-das-maes.jpg" alt="Dia das Mães">
-              </a>
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">
-                  <strong>Dia das Mães</strong>
-                </h4>
-                <!--Text-->
-                <a href="/event/dia-das-maes" class="btn btn-danger btn-md">Ver Evento</a>
-              </div>
-    
-            </div>
-            <!--/.Card-->
-    
-          </div>
-          <!--Second columnn-->
-    
-          <!--Third columnn-->
-          <div class="col-lg-4 col-md-6 mb-3 mt-3">
-            <!--Card-->
-            <div class="card mb-r wow fadeIn" data-wow-delay="0.6s">
-    
-              <!--Card image-->
-              <a href="/event/treinamento-protocolo-de-dor-toracica">
-                <img class="img-fluid evento " style="width: 400px; height: 250px;" src="/res/site/img/eventos/treinamento-protocolo-de-dor-toracica.jpg"
-                alt="Treinamento Protocolo de Dor Torácica">
-              </a>
-    
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">
-                  <strong>Treinamento Protocolo de Dor Torácica</strong>
-                </h4>
-                <!--Text-->
-                <a href="/event/treinamento-protocolo-de-dor-toracica" class="btn btn-danger btn-md">Ver Evento</a>
-              </div>
-    
-            </div>
-            <!--/.Card-->
-          </div>
-          <!--Third columnn-->
-        </div>
-        <!--/.Third row-->
-        <br>
-        <!--Pagination dark grey-->
-        <div class="row flex-center ">
-          <nav>
-            <ul class="pagination pg-red">
-              <!--Numbers-->
-              <li class="page-item active">
-                <a class="page-link">1</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <!--/Pagination dark grey-->
-    
       </div>
-      <!--/.Main layout-->
     
-    </main>
+      <div class="card">
+        <div class="card-body">
+          <!--Table-->
+          <table id="convenant-table" class="table table-hover table-responsive-md table-fixed table-striped">
+            <!--Table head-->
+            <thead>
+              <tr>
+                <th><h6>Convênio</h6></th>
+                <th><h6>Call Center</h6></th>
+                <th><h6>Site</h6></th>
+              </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+              {loop="$convenant"}
+                <tr>
+                  <th><strong>{$value.name_convenant}</strong></th>
+                  <td><strong>{$value.call_center}</strong></td>
+                  <td>
+                    <a href="{$value.site}" target="_blank">
+                      <strong>{$value.site}</strong>
+                    </a>
+                  </td>
+                </tr>
+              {/loop}
+            </tbody>
+            <!--Table body-->
+          </table>
+          <!--Table-->
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!--- End Main Content -->
 
@@ -288,7 +179,7 @@
 
   <footer class="page-footer center-on-small-only ">
     <!--Footer links-->
-    <div class="container my-3">
+    <div class="container my-5">
       <div class="row mt-4">
         <!--First column-->
         <div class="col-lg-3 col-md-6">
@@ -323,6 +214,9 @@
             </li>
             <li>
               <a href="/notificacao">Notificação</a>
+            </li>
+            <li>
+              <a href="/convenants-list">Lista de Convênios</a>
             </li>
           </ul>
         </div>
@@ -391,13 +285,34 @@
   <script type="text/javascript" src="/res/site/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="/res/site/js/mdb.min.js"></script>
-
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="/res/admin/plugins/datatables/dataTables.bootstrap4.min.js"></script>
   <script type="text/javascript" src="/res/site/js/scrolltotop.js"></script>
 
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
+
+    $(document).ready(function() {
+      $('#convenant-table').DataTable({
+        "language": {
+          "lengthMenu": "",
+          "zeroRecords": "Convênio não encontrado",
+          "info": "Exibindo página _PAGE_ de _PAGES_",
+          "infoEmpty": "-",
+          "infoFiltered": "",
+          "search": "Pesquisar",
+          "paginate": {
+            "next": "Próximo",
+            "previous": "Anterior",
+            "first": "Primeiro",
+            "last": "Último"
+          }
+        }
+      });
+    });
+    
   </script>
 </body>
 
