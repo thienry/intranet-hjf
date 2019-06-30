@@ -33,7 +33,6 @@
       </div>
     </div>
     <?php }else{ ?> <?php $displayPopupControl = 1; ?> <?php } ?> <?php } ?>
-
     <!-- Modal -->
     <div
       class="modal fade"
@@ -191,7 +190,6 @@
               class="d-block w-100 img-fluid"
               src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
               alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-              style="height: 500px;"
           /></a>
         </div>
         <?php $classActiveControl = 1; ?> <?php }else{ ?>
@@ -201,7 +199,6 @@
               class="d-block w-100 img-fluid"
               src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
               alt="<?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"
-              style="height: 500px;"
           /></a>
         </div>
         <?php } ?> <?php }else{ ?> <?php $displayBannerControl = 1; ?> <?php } ?> <?php } ?>

@@ -6,9 +6,9 @@ use \Thiago\DB\Sql;
 use \Thiago\Model\Post;
 use \Thiago\Model\Popup;
 use \Thiago\Model\Notificacao;
-use Thiago\Model\Convenant;
-use \Thiago\PageEvents;
-use \Thiago\PageEvent;
+use \Thiago\Model\Convenant;
+use \Thiago\Model\Event;
+
 
 $app->get('/', function() {
 	$ramal = Ramal::listAll();
@@ -107,59 +107,56 @@ $app->get("/convenants-list", function () {
 });
 
 $app -> get("/events", function() {
-	$page = new PageEvents([
+	$page = new Page([
 		"header" => false,
 		"footer" => false
 	]);
-	$page->setTpl("events");
+
+	$pagina = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+	$event = Event::listAll();
+	$events = new Event();
+	$events -> getFirstPhoto();
+
+	$pagination = $events -> getEventsPage($pagina);
+	$pages = [
+		'antes' => [
+			'link' => '/events' . '?page=' . ($pagina - 1) 
+		],
+		'depois' => [
+			'link' => '/events' . '?page=' . ($pagina + 1)
+		]
+	];
+
+	if($pagina > $pagination['pages'] || $pagina < 1) {
+		header('Location: /events');
+		exit;
+	}
+ 
+	$page->setTpl("events", [
+		"event" => Event::checkList($event),
+		"events" => $events -> getFirstPhoto(),
+		"events" => $pagination['data'],
+		"paginas" => $pagination['pages'],
+		"pages" => $pages,
+		"pagina" => $pagina
+	]);
 });
 
-$app->get('/event/treinamento-protocolo-de-dor-toracica', function () {
-	$page = new PageEvent([
+$app->get('/event/:id_event/:name_event', function ($id_event, $name_event) {
+	$page = new Page([
 		"header" => false,
 		"footer" => false
 	]);
-	$page->setTpl("event-1");
-});
 
-$app->get("/event/dia-das-maes", function () {
-	$page = new PageEvent([
-		"header" => false,
-		"footer" => false
+	$event = new Event();
+	$event -> getFromURL($id_event, $name_event);
+	$event -> get((int)$id_event);
+	$event -> getPhotos();
+	
+	$page->setTpl("event", [
+		"event" => $event -> getValues(),
+		"events" => $event -> getPhotos()
 	]);
-	$page->setTpl("event-2");
-});
-
-$app->get("/event/semana-enfermagem", function () {
-	$page = new PageEvent([
-		"header" => false,
-		"footer" => false
-	]);
-	$page->setTpl("event-3");
-});
-
-$app->get("/event/semana-enfermagem", function () {
-	$page = new PageEvent([
-		"header" => false,
-		"footer" => false
-	]);
-	$page->setTpl("event-3");
-});
-
-$app->get("/event/bencao-comemoracao-transplantes", function () {
-	$page = new PageEvent([
-		"header" => false,
-		"footer" => false
-	]);
-	$page->setTpl("event-4");
-});
-
-$app->get("/event/homenagem-liga-academica-transplante-figado", function () {
-	$page = new PageEvent([
-		"header" => false,
-		"footer" => false
-	]);
-	$page->setTpl("event-5");
 });
 
 ?>

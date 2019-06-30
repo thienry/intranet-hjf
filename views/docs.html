@@ -15,6 +15,7 @@
     />
     <!-- Bootstrap core CSS -->
     <link href="/res/site/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
     <!-- Material Design Bootstrap -->
     <link href="/res/site/css/mdb2.css" rel="stylesheet" />
     <!-- Your custom styles (optional) -->
@@ -146,9 +147,9 @@
                     target="_blank"
                     >Cerpe</a
                   >
+                  <a class="dropdown-item" href="/convenants-list">Lista de Convênios</a>
                 </div>
               </li>
-              
             </ul>
 
             <!-- Right -->
@@ -200,7 +201,7 @@
               <h4 class="h4 mb-3 mt3" style="text-align: center">
                 Processos Médicos
               </h4>
-              <video class="video-fluid z-depth-1" loop controls>
+              <video class="video-fluid z-depth-1" controls>
                 <source
                   src="/res/site/videos/processo-medicos.mp4"
                   type="video/mp4"
@@ -214,7 +215,7 @@
               <h4 class="h4 mb-3 mt3" style="text-align: center">
                 Processos Técnico de Enfermagem
               </h4>
-              <video class="video-fluid z-depth-1" loop controls>
+              <video class="video-fluid z-depth-1" controls>
                 <source
                   src="/res/site/videos/processo-tecnico-de-enfermagem.mp4"
                   type="video/mp4"
@@ -226,7 +227,7 @@
               <h4 class="h4 mb-3 mt3" style="text-align: center">
                 Processos Nutricionista
               </h4>
-              <video class="video-fluid z-depth-1" loop controls>
+              <video class="video-fluid z-depth-1" controls>
                 <source
                   src="/res/site/videos/processo-nutricionista.mp4"
                   type="video/mp4"
@@ -240,7 +241,7 @@
               <h4 class="h4 mb-3 mt3" style="text-align: center">
                 Processos Fisioterapia
               </h4>
-              <video class="video-fluid z-depth-1" loop controls>
+              <video class="video-fluid z-depth-1" controls>
                 <source
                   src="/res/site/videos/processo-fisioterapia.mp4"
                   type="video/mp4"
@@ -252,7 +253,7 @@
               <h4 class="h4 mb-3 mt3" style="text-align: center">
                 Processos Fonoaudiólogo
               </h4>
-              <video class="video-fluid z-depth-1" loop controls>
+              <video class="video-fluid z-depth-1" controls>
                 <source
                   src="/res/site/videos/processo-fonoaudiologo.mp4"
                   type="video/mp4"
@@ -391,6 +392,8 @@
       type="text/javascript"
       src="/res/site/js/jquery-3.2.1.min.js"
     ></script>
+    <!-- -->
+    <script src="https://cdn.plyr.io/3.5.6/plyr.polyfilled.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="/res/site/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
@@ -399,11 +402,15 @@
     <script type="text/javascript" src="/res/site/js/mdb.min.js"></script>
 
     <script type="text/javascript" src="/res/site/js/scrolltotop.js"></script>
-
     <!-- Initializations -->
     <script type="text/javascript">
       // Animations initialization
       new WOW().init();
+
+      // Initialize Plyr video players
+      const players = Array.from(document.querySelectorAll("video")).map(
+        p => new Plyr(p)
+      );
     </script>
   </body>
 </html>

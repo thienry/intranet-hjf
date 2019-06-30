@@ -1,7 +1,6 @@
 <?php
 
 use \Thiago\PageAdmin;
-use \Thiago\DB\Sql;
 use \Thiago\Model\Post;
 use \Thiago\Model\User;
 

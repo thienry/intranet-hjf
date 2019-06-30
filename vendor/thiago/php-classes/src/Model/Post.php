@@ -37,7 +37,7 @@ class Post extends Model {
     public function get($idpost) {
         $sql = new Sql();
         $results = $sql->select("SELECT * FROM tb_posts WHERE idpost = :idpost", array(
-            'idpost'=>$idpost
+            ":idpost" => $idpost
         ));
         $this->setData($results[0]);
     }

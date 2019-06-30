@@ -33,7 +33,6 @@
       </div>
     </div>
     {else} {$displayPopupControl = 1} {/if} {/loop}
-
     <!-- Modal -->
     <div
       class="modal fade"
@@ -191,7 +190,6 @@
               class="d-block w-100 img-fluid"
               src="{$value.desphoto}"
               alt="{$value.titulo}"
-              style="height: 500px;"
           /></a>
         </div>
         {$classActiveControl = 1} {else}
@@ -201,7 +199,6 @@
               class="d-block w-100 img-fluid"
               src="{$value.desphoto}"
               alt="{$value.titulo}"
-              style="height: 500px;"
           /></a>
         </div>
         {/if} {else} {$displayBannerControl = 1} {/if} {/loop}
