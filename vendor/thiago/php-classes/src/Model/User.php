@@ -53,7 +53,14 @@ class User extends Model {
     }
 
     public static function verifyInadmin($inadmin = false) {
-        if ($inadmin === false && (bool)$_SESSION[User::SESSION]['inadmin'] === false) {
+        if ($inadmin === false && (bool)$_SESSION[User::SESSION]['role'] === false) {
+            header("Location: /admin");
+            exit;
+        }
+    }
+
+    public static function verifyQualityUser($isQualityUser = 2) {
+        if ($isQualityUser !== 2 && (int)$_SESSION[User::SESSION]['role'] !== 2) {
             header("Location: /admin");
             exit;
         }
@@ -70,12 +77,12 @@ class User extends Model {
 
     public function save() {
         $sql = new Sql();
-        $results = $sql->select("CALL sp_users_save(:desname, :login, :senha, :setor, :inadmin)", array(
+        $results = $sql->select("CALL sp_users_save(:desname, :login, :senha, :setor, :role)", array(
             ":desname"=>$this->getdesname(),
             ":login"=>$this->getlogin(),
             ":senha"=>User::getPasswordHash($this->getsenha()),
             ":setor"=>$this->getsetor(),
-            ":inadmin"=>$this->getinadmin()
+            ":role"=>$this->getrole()
         ));
         $this->setData($results[0]);
     }
@@ -97,12 +104,12 @@ class User extends Model {
 
     public function update() {
         $sql = new Sql();
-        $results = $sql->select("CALL sp_usersupdate_save(:id_user, :desname, :login, :setor, :inadmin)", array(
+        $results = $sql->select("CALL sp_usersupdate_save(:id_user, :desname, :login, :setor, :role)", array(
             ":id_user"=>$this->getid_user(),
             ":desname"=>$this->getdesname(),
             ":login"=>$this->getlogin(),
             ":setor"=>$this->getsetor(),
-            ":inadmin"=>$this->getinadmin()
+            ":role"=>$this->getrole()
         ));
         $this->setData($results[0]);
     }

@@ -29,8 +29,8 @@
                 <p>Dashboard</p>
             </a>
             </li>
-            <!-- if da condicao inadmin-->
-            {if="$user.inadmin == 1"}
+            <!-- if da condicao role-->
+            {if="$user.role == 1"}
             <li class="nav-item">
             <a href="/admin/users" class="nav-link "  style="color: aliceblue;">
                 <i class="nav-icon fa fa-users"></i>
@@ -38,7 +38,7 @@
             </a>
             </li>
             {/if}
-            <!-- if da condicao inadmin-->
+            <!-- if da condicao role-->
             <li class="nav-item">
             <a href="/admin/posts" class="nav-link"  style="color: aliceblue;">
                 <i class="nav-icon fa fa-rss-square"></i>

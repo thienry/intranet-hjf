@@ -29,8 +29,8 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <!-- if da condicao inadmin-->
-          {if="$user.inadmin == 1"}
+          <!-- if da condicao role-->
+          {if="$user.role == 1"}
           <li class="nav-item">
             <a href="/admin/users" class="nav-link active"  style="color: aliceblue;">
               <i class="nav-icon fa fa-users"></i>
@@ -38,7 +38,7 @@
             </a>
           </li>
           {/if}
-          <!-- if da condicao inadmin-->
+          <!-- if da condicao role-->
           <li class="nav-item">
             <a href="/admin/posts" class="nav-link"  style="color: aliceblue;">
               <i class="nav-icon fa fa-rss-square"></i>
@@ -127,10 +127,12 @@
                     <label for="setor">Setor</label>
                     <input type="text" class="form-control" id="setor" name="setor" placeholder="Digite o setor">
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="inadmin" name="inadmin" value="1">
-                    <label class="form-check-label" for="inadmin"> Acesso de Administrador </label>
-                  </div>
+                  <select id="role" name="role" class="browser-default custom-select">
+                    <option selected>Nivel de Acesso</option>
+                    <option value="0">Usuario</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Qualidade</option>
+                  </select>
                 </div>
                 <!-- /.card-body -->
 

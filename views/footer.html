@@ -90,13 +90,20 @@
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2019 Copyright:
                 <a target="_blank" href="//www.thiagotec.com"> Equipe de TI </a>
+                <strong> - <span class="year"></span></strong> 
             </div>
         </div>
         <!--/.Copyright-->
 
     </footer>
+
+    <script>
+        const yearEl = document.querySelector('.year')
+        const getCurrentYear = new Date().getFullYear()
+
+        yearEl.innerHTML = getCurrentYear
+    </script>
 
 <!-- SCRIPTS -->
     <!-- JQuery -->

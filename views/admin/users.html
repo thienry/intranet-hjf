@@ -29,8 +29,8 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <!-- if da condicao inadmin-->
-          {if="$user.inadmin == 1"}
+          <!-- if da condicao role-->
+          {if="$user.role == 1"}
           <li class="nav-item">
             <a href="/admin/users" class="nav-link active"  style="color: aliceblue;">
               <i class="nav-icon fa fa-users"></i>
@@ -38,7 +38,7 @@
             </a>
           </li>
           {/if}
-          <!-- if da condicao inadmin-->
+          <!-- if da condicao role-->
           <li class="nav-item">
             <a href="/admin/posts" class="nav-link"  style="color: aliceblue;">
               <i class="nav-icon fa fa-rss-square"></i>
@@ -123,8 +123,8 @@
                     <td>{$value.id_user}</td>
                     <td>{$value.desname}</td>
                     <td>{$value.login}</td>
-                    <td>{$value.setor}</td/>
-                    <td>{if="$value.inadmin == 1"}Sim{else}Não{/if}</td>
+                    <td>{$value.setor}</td>
+                    <td>{if="$value.role == 1"}Sim{else}Não{/if}</td>
                     <td>
                       <a href="/admin/users/{$value.id_user}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                       <a href="/admin/users/{$value.id_user}/password" class="btn btn-warning btn-sm"><i class="fa fa-unlock"></i> Alterar Senha</a>

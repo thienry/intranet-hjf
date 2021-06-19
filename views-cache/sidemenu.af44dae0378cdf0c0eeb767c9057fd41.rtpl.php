@@ -1,0 +1,144 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a
+    href="/admin"
+    class="brand-link"
+    style="text-align: center; color: aliceblue;"
+  >
+    <img
+      src="/res/site/img/hjf.png"
+      alt="Blog HJF"
+      class="brand-image img-circle"
+    />
+    <span class="brand-text font-weight-light" style="padding-right: 30px;"
+      >Jayme da Fonte</span
+    >
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img
+          src="/res/admin/dist/img/user.svg"
+          class="img-circle elevation-2"
+          alt="User Image"
+        />
+      </div>
+      <div class="info">
+        <a href="#" class="d-block" style="color: aliceblue;"
+          ><?php echo getUserName(); ?></a
+        >
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <!-- Add icons to the links using the .nav-icon class
+              with font-awesome or any other icon font library -->
+        <?php if( $user["role"] != 2 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin" class="nav-link active" style="color: aliceblue;">
+            <i class="nav-icon fa fa-dashboard"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        <?php } ?>
+
+        <!-- if da condicao role-->
+        <?php if( $user["role"] == 1 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin/users" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-users"></i>
+            <p>Usuários</p>
+          </a>
+        </li>
+        <?php } ?>
+
+
+        <!-- if da condicao role-->
+        <?php if( $user["role"] != 2 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin/posts" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-rss-square"></i>
+            <p>Postagens</p>
+          </a>
+        </li>
+        <?php } ?>
+
+
+        <?php if( $user["role"] != 2 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin/events" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-calendar"></i>
+            <p>Eventos</p>
+          </a>
+        </li>
+        <?php } ?>
+
+
+        <?php if( $user["role"] != 2 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin/popups" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-picture-o"></i>
+            <p>Popups</p>
+          </a>
+        </li>
+        <?php } ?>
+
+
+        <?php if( $user["role"] != 2 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin/ramais" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-phone"></i>
+            <p>Ramais</p>
+          </a>
+        </li>
+        <?php } ?>
+
+
+        <?php if( $user["role"] != 2 ){ ?>
+
+        <li class="nav-item">
+          <a href="/admin/convenants" class="nav-link" style="color: aliceblue;">
+            <i class="nav-icon fa fa-heartbeat"></i>
+            <p>Convênios</p>
+          </a>
+        </li>
+        <?php } ?>
+
+
+        <?php if( $user["role"] != 0 ){ ?>
+
+        <li class="nav-item">
+          <a
+            href="/admin/notifications"
+            class="nav-link"
+            style="color: aliceblue;"
+          >
+            <i class="nav-icon fa fa-exclamation-circle"></i>
+            <p>Notificações</p>
+          </a>
+        </li>
+        <?php } ?>
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

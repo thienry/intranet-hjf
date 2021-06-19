@@ -285,7 +285,7 @@ BEGIN
 		login = plogin,
         senha = psenha,
         setor = psetor,
-        inadmin = pinadmin
+        role = prole
 	WHERE id_user = pid_user;
     
     SELECT * FROM tb_users WHERE id_user = pid_user;
@@ -321,8 +321,8 @@ BEGIN
 	
     DECLARE vid_user INT;
     
-	INSERT INTO tb_users (id_user, desname, login, senha, setor, inadmin)
-    VALUES(vid_user,pdesname, plogin, psenha, psetor, pinadmin);
+	INSERT INTO tb_users (id_user, desname, login, senha, setor, role)
+    VALUES(vid_user,pdesname, plogin, psenha, psetor, prole);
     
     SET vid_user = LAST_INSERT_ID();
     
@@ -782,19 +782,19 @@ CREATE TABLE IF NOT EXISTS `tb_users` (
   `login` varchar(50) NOT NULL,
   `senha` varchar(60) NOT NULL,
   `setor` varchar(60) NOT NULL,
-  `inadmin` tinyint(3) NOT NULL,
+  `role` tinyint(3) NOT NULL,
   `data_usuario` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela db_intranet.tb_users: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `tb_users` DISABLE KEYS */;
-INSERT INTO `tb_users` (`id_user`, `desname`, `login`, `senha`, `setor`, `inadmin`, `data_usuario`) VALUES
+INSERT INTO `tb_users` (`id_user`, `desname`, `login`, `senha`, `setor`, `role`, `data_usuario`) VALUES
 	(1, 'Thiago Moura', 'thienry', '$2y$12$0YxtjSJsGksknhQBjMbtS.Uj2hklwTOnLK3TW5NljU5g56JNEEN3O', 'CPD', 1, '2018-05-25 19:25:37'),
 	(2, 'Suely Melo', 'suely', '$2y$12$q3uTF/y/iLOad7AsdKzcTeAU7LxJWqRq0OgZA6tkrQTsr24cGgqWm', 'Marketing', 0, '2018-06-11 10:04:17'),
 	(11, 'cpd', 'cpd', '$2y$12$2SG3lotl.pWT0pDMtDPL.ezLK4wfDhQ7YOTIFs8OadfQSn08kjvu.', 'cpd', 1, '2018-07-11 13:52:57'),
 	(12, 'Mayara Lima', 'mayara.lima', '$2y$12$b4Lbt1iNLzfm/haPrX7mfeKumvkkY7gyIfkb.ipXyW/hGNlK2UWcK', 'Educação Permanente', 0, '2018-10-05 11:18:39'),
-	(13, 'David Jose da Silva', 'david.jose', '$2y$12$IxYzcY64PNHTlh.Q8L1JH.L/fZa1Rf5jUdtzhaIFzXRu6P985T7Vi', 'Qualidade', 0, '2018-11-26 15:55:41'),
+	(13, 'David Jose da Silva', 'david.jose', '$2y$12$IxYzcY64PNHTlh.Q8L1JH.L/fZa1Rf5jUdtzhaIFzXRu6P985T7Vi', 'Qualidade', 2, '2018-11-26 15:55:41'),
 	(14, 'Anderson Chagas', 'achagas', '$2y$12$TLx5mKsSyjeizz3tU3peI.NC/iWBFLkrwAZlj2.CZ5zrWnWyqkyaO', 'Tecnologia da Informação', 1, '2018-12-11 11:21:46');
 /*!40000 ALTER TABLE `tb_users` ENABLE KEYS */;
 

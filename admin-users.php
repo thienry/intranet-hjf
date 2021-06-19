@@ -93,7 +93,7 @@ $app->post("/admin/users/create", function() {
 	User::verifyLogin();
 	User::verifyInadmin();
 	$user = new User();
-	$_POST["inadmin"] = (isset($_POST["inadmin"])) ? 1:0;
+	$_POST["role"] = ((int)$_POST["role"]);
 	$user->setData($_POST);
 	$user->save();
 	header("Location: /admin/users");
@@ -104,7 +104,7 @@ $app->post("/admin/users/:id_user", function($iduser) {
 	User::verifyLogin();
 	User::verifyInadmin();
 	$user = new User();
-	$_POST["inadmin"] = (isset($_POST["inadmin"])) ? 1:0;
+	$_POST["role"] = ((int)$_POST["role"]);
 	$user->get((int)$iduser);
 	$user->setData($_POST);
 	$user->update();

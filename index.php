@@ -27,6 +27,7 @@ $app->notFound(function () use ($app) {
 
 require_once("admin.php");
 require_once("admin-convenants.php");
+require_once("admin-notifications.php");
 require_once("admin-events.php");
 require_once("admin-popups.php");
 require_once("admin-posts.php");
